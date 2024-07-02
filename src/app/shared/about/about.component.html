@@ -1,8 +1,15 @@
-<div class="main" [style.opacity]="opacity">
-  <div class="content" id="first">
+<div class="main">
+  <div class="content" id="first" #first [style.opacity]="mainOpacity">
     <h1>About</h1>
   </div>
-  <div class="content" id="second">
-    <h1>My name is a7a</h1>
+  <div
+    [style.opacity]="secondOffset.opacity"
+    [className]="
+      isNear(position, secondOffset.top) ? 'animate content' : 'content'
+    "
+    id="second"
+    #second
+  >
+    <h1>We are</h1>
   </div>
 </div>
