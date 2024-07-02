@@ -1,0 +1,27 @@
+@import "../node_modules/animate.css/animate.min.css";
+:root {
+  --primary-color: #001524;
+  --secondary-color: #c8c8c8;
+  --secondary-color2: #e8e8e8;
+  --text-color: #222222;
+  --color-main: #247ba0;
+  --color-main2: #cf4d6f;
+}
+
+p,
+span {
+  font-family: monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
