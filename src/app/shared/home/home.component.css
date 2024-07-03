@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary-color: #001524;
+  --primary-color: rgb(0, 21, 36);
   --secondary-color: #c8c8c8;
   --secondary-color2: #e8e8e8;
   --text-color: #222222;
   --color-main: #247ba0;
-  --color-main2: #cf4d6f;
+  --color-main2: rgb(207, 77, 111);
 }
 
 .main {
@@ -38,9 +38,10 @@
   background-position: center;
   background-image: linear-gradient(
     135deg,
-    var(--primary-color) 40%,
-    var(--color-main2) 100%
+    rgb(0, 21, 36, 1) 40%,
+    rgb(207, 77, 111, 1) 100%
   );
+
   background-size: 1000%;
   /* animation: background 10s infinite alternate; */
   filter: drop-shadow(0px -20px 50px var(--primary-color));

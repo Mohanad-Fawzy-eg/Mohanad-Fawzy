@@ -1,5 +1,11 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { ChangeDetectorRef } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  ViewChild,
+  ChangeDetectorRef,
+} from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-about',
@@ -7,17 +13,23 @@ import { ChangeDetectorRef } from '@angular/core';
   styleUrl: './about.component.css',
 })
 export class AboutComponent {
-  constructor(private ch: ChangeDetectorRef) {}
+  constructor(private ch: ChangeDetectorRef, private router: Router) {}
 
   mainOpacity: number = 0;
-  ngOnInit(): void {
-    this.increaseOpacity(1, 0.01);
+  async ngOnInit(): Promise<void> {
+    this.increaseOpacity(1, 0.1);
   }
   increaseOpacity(to: number, increment: number) {
     if (this.mainOpacity < to) {
       this.mainOpacity += increment;
       setTimeout(this.increaseOpacity.bind(this), 50, to, increment);
     }
+  }
+
+  //^ Router;
+
+  async route(route: string) {
+    this.router.navigateByUrl('/about#' + route);
   }
 
   //? Offset variables;
