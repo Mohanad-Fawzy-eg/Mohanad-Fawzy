@@ -16,6 +16,7 @@ export class AboutComponent {
   constructor(private ch: ChangeDetectorRef, private router: Router) {}
 
   mainOpacity: number = 0;
+  backgroundPosition: string = 'right';
   async ngOnInit(): Promise<void> {
     this.increaseOpacity(1, 0.1);
   }
@@ -34,23 +35,23 @@ export class AboutComponent {
 
   //? Offset variables;
 
-  firstOffset: prop = {
+  firstProp: prop = {
     top: 0,
     height: 0,
     opacity: 1,
   };
 
-  secondOffset: prop = {
+  secondProp: prop = {
     top: 0,
     height: 0,
     opacity: 0,
   };
 
-  ngAfterViewInit(): void {
-    this.firstOffset.top = this.first?.nativeElement.offsetTop;
-    this.firstOffset.height = this.first?.nativeElement.offsetHeight;
-    this.secondOffset.top = this.second?.nativeElement.offsetTop;
-    this.secondOffset.height = this.second?.nativeElement.offsetTop;
+  async ngAfterViewInit(): Promise<void> {
+    this.firstProp.top = this.first?.nativeElement.offsetTop;
+    this.firstProp.height = this.first?.nativeElement.offsetHeight;
+    this.secondProp.top = this.second?.nativeElement.offsetTop;
+    this.secondProp.height = this.second?.nativeElement.offsetTop;
     this.ch.detectChanges();
   }
 
@@ -64,14 +65,40 @@ export class AboutComponent {
   animateThird: boolean = false;
   position: number = 0;
 
+  topArrowOpacity: number = 0;
+
   @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
+  async onScroll(event: any) {
     this.position = window.scrollY;
-    this.secondOffset.opacity = this.calcOpacity(
-      this.position,
-      this.secondOffset.top
-    );
-    console.log(this.calcOpacity(this.position, this.secondOffset.top));
+    this.topArrowOpacity = this.position / this.secondProp.top;
+    if (
+      this.position > this.secondProp.top / 5 &&
+      this.position < this.secondProp.top
+    ) {
+      this.mainOpacity = this.secondProp.top / (this.position * 5);
+    } else {
+      this.mainOpacity = 1;
+    }
+
+    this.animateSecond =
+      this.position > this.secondProp.top &&
+      this.position < this.secondProp.height + this.secondProp.top;
+  }
+
+  //^ Resize window;
+
+  @HostListener('window:resize', ['$event'])
+  async onResize() {
+    this.firstProp.top = this.first?.nativeElement.offsetTop;
+    this.firstProp.height = this.first?.nativeElement.offsetHeight;
+    this.secondProp.top = this.second?.nativeElement.offsetTop;
+    this.secondProp.height = this.second?.nativeElement.offsetHeight;
+  }
+
+  //& Top arrow calc;
+
+  async setScroll(position: number) {
+    window.scrollTo({ top: position, behavior: 'smooth' });
   }
 
   isNear(x: number, y: number): boolean {

@@ -2,12 +2,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
-  --primary-color: rgb(0, 21, 36);
-  --secondary-color: rgb(199, 199, 199);
-  --secondary-color2: rgb(232, 232, 232);
-  --text-color: rgb(34, 34, 34);
-  --color-main: rgb(36, 123, 160);
-  --color-main2: rgb(207, 77, 111);
+  --primary-color: #0a369d;
+  --secondary-color: #4d9de0;
+  --secondary-color2: #e2c2c6;
+  --text-color: #496f5d;
+  --color-main: #f0a7a0;
+  --color-main2: #defffc;
+  --dark-color: rgb(30, 30, 30);
+}
+
+.arrow-top {
+  position: fixed;
+  bottom: 2%;
+  right: 2%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  color: var(--color-main2);
+  background-color: var(--color-main);
+  filter: drop-shadow(0px 10px 15px var(--color-main2));
+  border-radius: 50%;
+}
+
+.arrow-top:hover {
+  cursor: pointer;
+}
+
+.arrow-top:active {
+  transform: scale(0.9);
 }
 
 .main {
@@ -17,11 +43,6 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 300%;
-  background-image: url("../../../../public/BG.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-  background-attachment: fixed;
 }
 
 .content {
@@ -31,6 +52,9 @@
 }
 
 #first {
+  position: fixed;
+  width: 100%;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,39 +62,143 @@
   user-select: none;
   grid-area: 1 / 1 / 2 / 2;
   height: 100%;
+  background-color: var(--secondary-color);
   background-image: linear-gradient(
-    0deg,
-    rgb(207, 77, 111, 1),
-    rgb(199, 199, 199, 1)
+    180deg,
+    var(--color-main2) 50%,
+    var(--secondary-color2) 100%
   );
-  filter: drop-shadow(0px 10px 20px var(--color-main2));
+  filter: drop-shadow(0px 10px 20px var(--color-main));
+}
+
+#first h1,
+#first span {
+  opacity: 0;
+  font-family: cubano, sans-serif;
+}
+
+#first h1 {
+  color: var(--primary-color);
+  font-size: 7rem;
+  line-height: 100px;
+  animation: move-background1 3s forwards, spawn 3s forwards;
+}
+
+#first span {
+  color: var(--secondary-color);
+  line-height: 70px;
+  font-size: 5rem;
+  background-size: 500%;
+  animation: move-background2 3s forwards, spawn 3s forwards;
+  animation-delay: 0.75s;
+}
+
+@keyframes spawn {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes move-background1 {
+  0% {
+    background: linear-gradient(
+      270deg,
+      var(--primary-color) 50%,
+      var(--secondary-color) 65%,
+      var(--color-main2) 70%,
+      var(--secondary-color) 75%,
+      var(--primary-color) 90%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    background-position: right;
+  }
+  100% {
+    background: linear-gradient(
+      270deg,
+      var(--primary-color) 50%,
+      var(--secondary-color) 60%,
+      var(--color-main2) 70%,
+      var(--secondary-color) 80%,
+      var(--primary-color) 90%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    background-position: left;
+  }
+}
+
+@keyframes move-background2 {
+  0% {
+    background: linear-gradient(
+      270deg,
+      var(--secondary-color) 50%,
+      var(--color-main2) 65%,
+      var(--secondary-color2) 70%,
+      var(--color-main) 75%,
+      var(--secondary-color) 90%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    background-position: right;
+  }
+  100% {
+    background: linear-gradient(
+      270deg,
+      var(--secondary-color) 50%,
+      var(--color-main2) 65%,
+      var(--secondary-color2) 70%,
+      var(--color-main) 75%,
+      var(--secondary-color) 90%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500%;
+    background-position: left;
+  }
 }
 
 #second {
+  position: relative;
+  z-index: 10;
   grid-area: 2 / 1 / 3 / 2;
   height: 100%;
+  width: 100%;
   background-image: linear-gradient(
     180deg,
-    rgb(207, 77, 111, 0.5),
-    rgb(36, 123, 160, 0.5)
+    rgb(36, 123, 160, 1),
+    rgb(207, 77, 111, 1)
   );
   backdrop-filter: blur(9px);
   -webkit-backdrop-filter: blur(9px);
-  border-top: 1px solid var(--color-main2);
-  border-bottom: 1px solid var(--color-main);
+  border-top: 1px solid var(--color-main);
+  border-bottom: 1px solid var(--color-main2);
 }
 
 #third {
+  z-index: 10;
   grid-area: 3 / 1 / 4 / 2;
   height: 100%;
   background-image: linear-gradient(
     0deg,
     var(--primary-color),
-    var(--color-main)
+    var(--color-main2)
   );
-  filter: drop-shadow(0px -10px 20px var(--color-main));
+  filter: drop-shadow(0px -10px 20px var(--color-main2));
 }
 
-.animate {
+#second.animate {
   color: red;
 }

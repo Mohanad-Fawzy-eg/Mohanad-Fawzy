@@ -1,11 +1,11 @@
 @import "../node_modules/animate.css/animate.min.css";
 :root {
-  --primary-color: #001524;
-  --secondary-color: #c8c8c8;
-  --secondary-color2: #e8e8e8;
-  --text-color: #222222;
-  --color-main: #247ba0;
-  --color-main2: #cf4d6f;
+  --primary-color: #0a369d;
+  --secondary-color: #4d9de0;
+  --secondary-color2: #e2c2c6;
+  --text-color: #496f5d;
+  --color-main: #f0a7a0;
+  --color-main2: #defffc;
 }
 
 p,

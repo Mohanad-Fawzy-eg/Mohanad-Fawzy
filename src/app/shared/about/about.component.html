@@ -1,19 +1,31 @@
 <meta charset="UTF-8" />
 
 <div class="main">
-  <div class="content" id="first" #first [style.opacity]="mainOpacity">
-    <h1>My name is Mohanad Fawzy 🙋🏻‍♂️</h1>
-    <span>I am from Alexanderia, Egypt &#127466; </span>
-    <a (click)="route('second')">I want to know more</a>
+  <div
+    class="content"
+    id="first"
+    #first
+    [style.opacity]="mainOpacity"
+    [style.margin-top]="
+      position < secondProp.top ? -position / 3 + 'px' : '0px'
+    "
+  >
+    <h1>Mohanad Fawzy</h1>
+    <span>I am from Alexanderia, Egypt</span>
+    <a (click)="setScroll(secondProp.top)"> want to know more</a>
   </div>
   <div
-    [className]="
-      isNear(position, secondOffset.top) ? 'animate content' : 'content'
-    "
+    [className]="animateSecond ? 'animate content' : 'content'"
     id="second"
     #second
   >
     <h1>We are</h1>
   </div>
-  <div class="content" id="third"></div>
+  <div class="content" id="third">
+    <h1>Yes</h1>
+  </div>
 </div>
+
+<a (click)="setScroll(0)" class="arrow-top" [style.opacity]="topArrowOpacity">
+  <i class="bx bx-up-arrow-alt"></i>
+</a>
