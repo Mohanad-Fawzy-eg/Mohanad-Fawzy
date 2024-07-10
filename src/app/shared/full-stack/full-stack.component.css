@@ -80,8 +80,43 @@
   transition: all 1.5s ease-in-out;
 }
 
+.content .text span:first-of-type {
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+.content .text span:last-of-type {
+  opacity: 0;
+  transition: all 1.5s ease-in-out;
+}
+
+.content .bottom {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 1.5s ease-in-out;
+}
+
 .animate .text h1 {
   opacity: 1;
   transform: translateX(0);
   transition: all 1.5s ease-in-out;
+}
+
+.animate .text span:first-of-type {
+  opacity: 1;
+  transition: all 1.5s ease-in-out;
+  transition-delay: 1.5s;
+}
+
+.animate .text span:last-of-type {
+  opacity: 1;
+  transition: all 1.5s ease-in-out;
+  transition-delay: 2.5s;
+}
+
+.animate .bottom {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 1.5s ease-in-out;
+  transition-delay: 3s;
 }

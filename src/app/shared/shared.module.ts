@@ -8,6 +8,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
 import { FullStackComponent } from './full-stack/full-stack.component';
+import { FrontEndSkillsComponent } from './front-end-skills/front-end-skills.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FullStackComponent } from './full-stack/full-stack.component';
     ProjectsComponent,
     FooterComponent,
     FullStackComponent,
+    FrontEndSkillsComponent,
   ],
   exports: [
     NavBarComponent,
@@ -27,6 +29,7 @@ import { FullStackComponent } from './full-stack/full-stack.component';
     ProjectsComponent,
     FooterComponent,
     FullStackComponent,
+    FrontEndSkillsComponent,
   ],
 })
 export class SharedModule {}
