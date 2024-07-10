@@ -7,25 +7,28 @@
     #first
     [style.opacity]="mainOpacity"
     [style.margin-top]="
-      position < secondProp.top ? -position / 3 + 'px' : '0px'
+      position < firstProp.height ? -position / 3 + 'px' : '0px'
     "
   >
     <h1>Mohanad Fawzy</h1>
     <span>I am from Alexanderia, Egypt</span>
-    <a (click)="setScroll(secondProp.top)"> want to know more</a>
+    <a (click)="setScroll(firstProp.height)">I want to know more</a>
   </div>
-  <div
-    [className]="animateSecond ? 'animate content' : 'content'"
-    id="second"
-    #second
-  >
-    <h1>We are</h1>
+  <div class="content" id="second" #second>
+    <app-full-stack
+      style="width: 100%; height: 100%; max-height: 100%"
+    ></app-full-stack>
   </div>
   <div class="content" id="third">
     <h1>Yes</h1>
   </div>
 </div>
 
-<a (click)="setScroll(0)" class="arrow-top" [style.opacity]="topArrowOpacity">
+<a
+  (click)="setScroll(0)"
+  class="arrow-top"
+  [style.opacity]="topArrowOpacity"
+  [style.pointer-events]="position > 0 ? 'auto' : 'none'"
+>
   <i class="bx bx-up-arrow-alt"></i>
 </a>

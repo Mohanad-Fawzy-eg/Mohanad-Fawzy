@@ -64,10 +64,9 @@ export class HomeComponent {
   myTitle: string = '';
   myTitles = [
     ' Full Stack Developer.',
-    ' Software Developer.',
     ' Tutor.',
-    ' Freelancer.',
     ' Content writer.',
+    ' Freelancer.',
   ];
 
   wordIndex: number = 0;

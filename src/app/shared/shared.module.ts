@@ -7,6 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TopNavBarComponent } from './top-nav-bar/top-nav-bar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FullStackComponent } from './full-stack/full-stack.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     ProjectsComponent,
     FooterComponent,
+    FullStackComponent,
   ],
   exports: [
     NavBarComponent,
@@ -24,6 +26,7 @@ import { FooterComponent } from './footer/footer.component';
     AboutComponent,
     ProjectsComponent,
     FooterComponent,
+    FullStackComponent,
   ],
 })
 export class SharedModule {}

@@ -1,0 +1,21 @@
+<div
+  [className]="
+    position > fsContent.top * 0.8 && position < fsContent.height * 0.8
+      ? 'animate content'
+      : 'content'
+  "
+  #content
+>
+  <div class="text">
+    <h1>I am a full-stack developer</h1>
+
+    <span>{{ text1 }}<span>|</span></span>
+
+    <span
+      >Throughout my professional career I have aquired a lot of skills</span
+    >
+  </div>
+  <div class="bottom">
+    <a (click)="about.setScroll(fsContent.height)">What skills ?</a>
+  </div>
+</div>

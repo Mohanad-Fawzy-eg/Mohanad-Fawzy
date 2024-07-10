@@ -6,11 +6,13 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { FullStackComponent } from '../full-stack/full-stack.component';
 @Component({
   standalone: true,
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
+  imports: [FullStackComponent],
 })
 export class AboutComponent {
   constructor(private ch: ChangeDetectorRef, private router: Router) {}
@@ -41,48 +43,33 @@ export class AboutComponent {
     opacity: 1,
   };
 
-  secondProp: prop = {
-    top: 0,
-    height: 0,
-    opacity: 0,
-  };
-
   async ngAfterViewInit(): Promise<void> {
     this.firstProp.top = this.first?.nativeElement.offsetTop;
     this.firstProp.height = this.first?.nativeElement.offsetHeight;
-    this.secondProp.top = this.second?.nativeElement.offsetTop;
-    this.secondProp.height = this.second?.nativeElement.offsetTop;
     this.ch.detectChanges();
   }
 
   //! Animations
 
-  @ViewChild('first') first: ElementRef | undefined;
-  @ViewChild('second') second: ElementRef | undefined;
-
-  animateFirst: boolean = false;
-  animateSecond: boolean = false;
-  animateThird: boolean = false;
   position: number = 0;
 
-  topArrowOpacity: number = 0;
+  @ViewChild('first') first: ElementRef | undefined;
 
+  animateFirst: boolean = false;
+
+  topArrowOpacity: number = 0;
   @HostListener('window:scroll', ['$event'])
   async onScroll(event: any) {
     this.position = window.scrollY;
-    this.topArrowOpacity = this.position / this.secondProp.top;
+    this.topArrowOpacity = this.position / this.firstProp.height;
     if (
-      this.position > this.secondProp.top / 5 &&
-      this.position < this.secondProp.top
+      this.position > this.firstProp.height / 5 &&
+      this.position < this.firstProp.height
     ) {
-      this.mainOpacity = this.secondProp.top / (this.position * 5);
+      this.mainOpacity = this.firstProp.height / (this.position * 5);
     } else {
       this.mainOpacity = 1;
     }
-
-    this.animateSecond =
-      this.position > this.secondProp.top &&
-      this.position < this.secondProp.height + this.secondProp.top;
   }
 
   //^ Resize window;
@@ -91,12 +78,11 @@ export class AboutComponent {
   async onResize() {
     this.firstProp.top = this.first?.nativeElement.offsetTop;
     this.firstProp.height = this.first?.nativeElement.offsetHeight;
-    this.secondProp.top = this.second?.nativeElement.offsetTop;
-    this.secondProp.height = this.second?.nativeElement.offsetHeight;
   }
 
   //& Top arrow calc;
 
+  @HostListener('window', ['$event'])
   async setScroll(position: number) {
     window.scrollTo({ top: position, behavior: 'smooth' });
   }
@@ -110,7 +96,7 @@ export class AboutComponent {
   }
 }
 
-interface prop {
+export interface prop {
   top: number;
   height: number;
   opacity: number;

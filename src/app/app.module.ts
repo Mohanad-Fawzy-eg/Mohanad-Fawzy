@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './shared/home/home.component';
 import { AboutComponent } from './shared/about/about.component';
 import { ProjectsComponent } from './shared/projects/projects.component';
+import { FullStackComponent } from './shared/full-stack/full-stack.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { ProjectsComponent } from './shared/projects/projects.component';
     HomeComponent,
     AboutComponent,
     ProjectsComponent,
+    FullStackComponent,
     MatIconModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
