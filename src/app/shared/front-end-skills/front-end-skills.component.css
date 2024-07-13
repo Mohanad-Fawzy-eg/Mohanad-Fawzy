@@ -1,19 +1,60 @@
 @import url("https://fonts.cdnfonts.com/css/cubano");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-  --primary-color: #0a369d;
-  --secondary-color: #4d9de0;
-  --secondary-color2: #e2c2c6;
-  --text-color: #496f5d;
-  --color-main: #f0a7a0;
-  --color-main2: #defffc;
-  --my-color: #1e1e1e;
-}
+  --primary-color-main: #008080;
+  --primary-color-shade1: #e6f7f7;
+  --primary-color-shade2: #b3e0e0;
+  --primary-color-shade3: #80c9c9;
+  --primary-color-shade4: #4da6a6;
+  --primary-color-shade5: #005959;
+  --primary-color-shade6: #003d3d;
+  --primary-color-shade7: #002626;
+  --primary-color-shade8: #001313;
+  --secondary-color-main: #ff6b6b;
+  --secondary-color-shade1: #fff5f5;
+  --secondary-color-shade2: #ffe0e0;
+  --secondary-color-shade3: #ffc0c0;
+  --secondary-color-shade4: #ff9e9e;
+  --secondary-color-shade5: #d45555;
+  --secondary-color-shade6: #a63b3b;
+  --secondary-color-shade7: #7f2e2e;
+  --secondary-color-shade8: #4f1c1c;
+  --text-color-main: #36454f;
+  --text-color-shade1: #d7dadc;
+  --text-color-shade2: #afb5b9;
+  --text-color-shade3: #868f95;
+  --text-color-shade4: #5e6a72;
+  --text-color-shade5: #2b373f;
+  --text-color-shade6: #20292f;
+  --text-color-shade7: #161c20;
+  --text-color-shade8: #0b0e10;
+  --background-color-main: #fff8dc;
+  --background-color-shade1: #fffef8;
+  --background-color-shade2: #fffcf1;
+  --background-color-shade3: #fffbea;
+  --background-color-shade4: #fff9e3;
+  --background-color-shade5: #ccc6b0;
+  --background-color-shade6: #999584;
+  --background-color-shade7: #666358;
+  --background-color-shade8: #33322c;
 
+  /*! Fonts */
+  --font-ubuntu-mono: "Ubuntu Mono", monospace;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-cubano: "Cubano", sans-serif;
+}
 img {
   max-width: 50px;
-  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
   display: block;
 }
 
@@ -84,11 +125,14 @@ img {
   width: 90vw;
   height: 100%;
   padding: 0 !important;
+  text-align: left;
+  gap: 30px;
 }
 
 .bottom {
   grid-area: 3 / 1 / 4 / 2;
   text-align: center;
+  margin-top: 5%;
 }
 
 .content .text {
@@ -103,7 +147,7 @@ img {
 .text h1 {
   font-family: cubano, sans-serif;
   font-size: 5rem;
-  color: var(--primary-color);
+  color: var(--background-color-shade8);
 }
 
 .text span {
@@ -111,7 +155,7 @@ img {
   font-family: monospace, sans-serif;
   font-weight: bold;
   font-size: 1.5rem;
-  color: var(--secondary-color);
+  color: var(--background-color-shade7);
 }
 
 .angular,
@@ -124,7 +168,6 @@ img {
   flex-direction: row;
   align-items: center;
   justify-content: start;
-  text-align: center;
   width: 100%;
   height: 100%;
 }
@@ -135,9 +178,9 @@ img {
   align-self: center;
   align-items: center;
   justify-content: center;
-  text-align: center;
   width: 100%;
   height: 100%;
+  text-align: left !important;
 }
 
 .js,
@@ -153,7 +196,7 @@ img {
 .jquery .progress {
   width: 80%;
   height: 10px;
-  background-color: var(--secondary-color2);
+  background-color: var(--text-color-shade1);
   border-radius: 10px;
   overflow: hidden;
   margin-left: 3%;
@@ -164,7 +207,7 @@ img {
   position: relative;
   width: 30%;
   height: 10px;
-  background-color: var(--secondary-color2);
+  background-color: var(--text-color-shade1);
   border-radius: 10px;
   overflow: hidden;
   margin-left: 3%;
@@ -181,6 +224,62 @@ img {
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color-shade4);
   border-radius: 10px;
+}
+
+.angular p,
+.vue p,
+.flutter p,
+.js p,
+.ts p,
+.jquery p {
+  position: absolute;
+  text-wrap: nowrap;
+  margin-left: 5%;
+  margin-top: 3%;
+  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: var(--primary-color-shade7);
+  opacity: 1;
+}
+
+.flutter p {
+  margin-left: -7% !important;
+}
+.vue p {
+  margin-left: -15% !important;
+}
+
+.percent {
+  position: absolute;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  z-index: 11;
+  margin-top: -2%;
+  margin-left: 5%;
+  font-style: italic;
+  font-weight: bold;
+  color: var(--primary-color-shade7);
+  opacity: 0.4;
+}
+
+.flutter .percent,
+.vue .percent {
+  margin-left: -18% !important;
+}
+
+.bottom a {
+  text-decoration: none;
+  color: var(--text-color-shade7);
+  font-family: var(--font-cubano);
+  font-size: 1.4rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+
+.bottom a:hover {
+  color: var(--text-color-shade5);
+  cursor: pointer;
 }

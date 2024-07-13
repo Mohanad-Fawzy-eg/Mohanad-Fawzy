@@ -1,14 +1,53 @@
 @import url("https://fonts.cdnfonts.com/css/cubano");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
 :root {
-  --primary-color: #0a369d;
-  --secondary-color: #4d9de0;
-  --secondary-color2: #e2c2c6;
-  --text-color: #496f5d;
-  --color-main: #f0a7a0;
-  --color-main2: #defffc;
-  --dark-color: rgb(30, 30, 30);
+  --primary-color-main: #008080;
+  --primary-color-shade1: #e6f7f7;
+  --primary-color-shade2: #b3e0e0;
+  --primary-color-shade3: #80c9c9;
+  --primary-color-shade4: #4da6a6;
+  --primary-color-shade5: #005959;
+  --primary-color-shade6: #003d3d;
+  --primary-color-shade7: #002626;
+  --primary-color-shade8: #001313;
+  --secondary-color-main: #ff6b6b;
+  --secondary-color-shade1: #fff5f5;
+  --secondary-color-shade2: #ffe0e0;
+  --secondary-color-shade3: #ffc0c0;
+  --secondary-color-shade4: #ff9e9e;
+  --secondary-color-shade5: #d45555;
+  --secondary-color-shade6: #a63b3b;
+  --secondary-color-shade7: #7f2e2e;
+  --secondary-color-shade8: #4f1c1c;
+  --text-color-main: #36454f;
+  --text-color-shade1: #d7dadc;
+  --text-color-shade2: #afb5b9;
+  --text-color-shade3: #868f95;
+  --text-color-shade4: #5e6a72;
+  --text-color-shade5: #2b373f;
+  --text-color-shade6: #20292f;
+  --text-color-shade7: #161c20;
+  --text-color-shade8: #0b0e10;
+  --background-color-main: #fff8dc;
+  --background-color-shade1: #fffef8;
+  --background-color-shade2: #fffcf1;
+  --background-color-shade3: #fffbea;
+  --background-color-shade4: #fff9e3;
+  --background-color-shade5: #ccc6b0;
+  --background-color-shade6: #999584;
+  --background-color-shade7: #666358;
+  --background-color-shade8: #33322c;
+
+  /*! Fonts */
+  --font-ubuntu-mono: "Ubuntu Mono", monospace;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-cubano: "Cubano", sans-serif;
 }
 
 .arrow-top {
@@ -22,9 +61,9 @@
   width: 50px;
   height: 50px;
   font-size: 2rem;
-  color: var(--color-main2);
-  background-color: var(--color-main);
-  filter: drop-shadow(0px 10px 15px var(--color-main2));
+  color: var(--secondary-color-shade2);
+  background-color: var(--primary-color-shade7);
+  filter: drop-shadow(0px 10px 15px var(--secondary-color-shade2));
   border-radius: 50%;
 }
 
@@ -54,7 +93,7 @@
 #first {
   position: fixed;
   width: 100%;
-  z-index: 9;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -62,30 +101,28 @@
   user-select: none;
   grid-area: 1 / 1 / 2 / 2;
   height: 100%;
-  background-color: var(--secondary-color);
   background-image: linear-gradient(
     180deg,
-    var(--color-main2) 50%,
-    var(--secondary-color2) 100%
+    var(--primary-color-shade2) 60%,
+    var(--primary-color-shade5) 100%
   );
-  filter: drop-shadow(0px 10px 20px var(--color-main));
 }
 
 #first h1,
 #first span {
   opacity: 0;
-  font-family: cubano, sans-serif;
+  font-family: var(--font-cubano);
 }
 
 #first h1 {
-  color: var(--primary-color);
+  color: var(--primary-color-shade2);
   font-size: 7rem;
   line-height: 100px;
   animation: move-background1 3s forwards, spawn 3s forwards;
 }
 
 #first span {
-  color: var(--secondary-color);
+  color: var(--primary-color-shade3);
   line-height: 70px;
   font-size: 5rem;
   background-size: 500%;
@@ -101,7 +138,7 @@
   font-size: 1.5rem;
   padding-left: 1%;
   padding-right: 1%;
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color-shade2);
   filter: drop-shadow(0px 10px 15px var(--color-main2));
   transition: all 1s ease;
   animation: move-background3 3s forwards, spawn 3s ease 1.75s forwards;
@@ -126,11 +163,11 @@
   0% {
     background: linear-gradient(
       270deg,
-      var(--primary-color) 50%,
-      var(--secondary-color) 65%,
-      var(--color-main2) 70%,
-      var(--secondary-color) 75%,
-      var(--primary-color) 90%
+      var(--primary-color-shade2) 50%,
+      var(--primary-color-shade3) 65%,
+      var(--secondary-color-shade3) 70%,
+      var(--secondary-color-shade5) 75%,
+      var(--secondary-color-shade8) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -141,11 +178,11 @@
   100% {
     background: linear-gradient(
       270deg,
-      var(--primary-color) 50%,
-      var(--secondary-color) 60%,
-      var(--color-main2) 70%,
-      var(--secondary-color) 80%,
-      var(--primary-color) 90%
+      var(--primary-color-shade2) 50%,
+      var(--primary-color-shade3) 65%,
+      var(--secondary-color-shade3) 70%,
+      var(--secondary-color-shade5) 75%,
+      var(--secondary-color-shade8) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -159,11 +196,11 @@
   0% {
     background: linear-gradient(
       270deg,
-      var(--secondary-color) 50%,
-      var(--color-main2) 65%,
-      var(--secondary-color2) 70%,
-      var(--color-main) 75%,
-      var(--secondary-color) 90%
+      var(--primary-color-shade2) 50%,
+      var(--secondary-color-shade3) 65%,
+      var(--secondary-color-main) 70%,
+      var(--primary-color-shade5) 75%,
+      var(--primary-color-shade7) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -174,11 +211,11 @@
   100% {
     background: linear-gradient(
       270deg,
-      var(--secondary-color) 50%,
-      var(--color-main2) 65%,
-      var(--secondary-color2) 70%,
-      var(--color-main) 75%,
-      var(--secondary-color) 90%
+      var(--primary-color-shade2) 50%,
+      var(--secondary-color-shade3) 65%,
+      var(--secondary-color-main) 70%,
+      var(--primary-color-shade5) 75%,
+      var(--primary-color-shade7) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -192,11 +229,11 @@
   0% {
     background: linear-gradient(
       270deg,
-      var(--secondary-color) 50%,
-      var(--color-main2) 65%,
-      var(--secondary-color2) 70%,
-      var(--color-main) 75%,
-      var(--secondary-color) 90%
+      var(--secondary-color-shade2) 50%,
+      var(--secondary-color-shade4) 65%,
+      var(--secondary-color-main) 70%,
+      var(--secondary-color-shade6) 75%,
+      var(--primary-color-shade7) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -207,11 +244,11 @@
   100% {
     background: linear-gradient(
       270deg,
-      var(--secondary-color) 50%,
-      var(--color-main2) 65%,
-      var(--secondary-color2) 70%,
-      var(--color-main) 75%,
-      var(--secondary-color) 90%
+      var(--secondary-color-shade2) 50%,
+      var(--secondary-color-shade4) 65%,
+      var(--secondary-color-main) 70%,
+      var(--secondary-color-shade6) 75%,
+      var(--primary-color-shade7) 90%
     );
     background-clip: text;
     -webkit-background-clip: text;
@@ -226,6 +263,7 @@
   grid-area: 2 / 1 / 3 / 2;
   height: 100%;
   width: 100%;
+  background-color: var(--background-color-shade2);
 }
 
 #third {
@@ -233,9 +271,8 @@
   grid-area: 3 / 1 / 4 / 2;
   height: 100%;
   max-height: 100%;
-  background-image: linear-gradient(
-    0deg,
-    var(--secondary-color2),
-    var(--color-main2)
-  );
+  background-image: url("/wavesOpacity\ \(1\).svg");
+  background-size: 150%;
+  background-position: left;
+  background-color: var(--background-color-shade4);
 }

@@ -4,7 +4,6 @@ import {
   HostListener,
   ViewChild,
   ChangeDetectorRef,
-  Input,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { FullStackComponent } from '../full-stack/full-stack.component';
@@ -63,11 +62,23 @@ export class AboutComponent {
   public get getsec1prop(): prop {
     return AboutComponent.sec1prop;
   }
+
+  public set setsec1prop(prop: prop) {
+    AboutComponent.sec1prop = prop;
+  }
   public get getsec2prop(): prop {
     return AboutComponent.sec2prop;
   }
+
+  public set setsec2prop(prop: prop) {
+    AboutComponent.sec2prop = prop;
+  }
   public get getsec3prop(): prop {
     return AboutComponent.sec3prop;
+  }
+
+  public set setsec3prop(prop: prop) {
+    AboutComponent.sec3prop = prop;
   }
 
   async ngAfterViewInit(): Promise<void> {
@@ -99,13 +110,10 @@ export class AboutComponent {
   async onScroll(event: any) {
     this.position = window.scrollY;
     this.topArrowOpacity = this.position / AboutComponent.sec1prop.height;
-    if (
-      this.position > AboutComponent.sec1prop.height / 5 &&
-      this.position < AboutComponent.sec1prop.height
-    ) {
-      this.mainOpacity = AboutComponent.sec1prop.height / (this.position * 5);
-    } else {
-      this.mainOpacity = 1;
+    if (this.getsec1prop.opacity != 0) {
+      AboutComponent.sec1prop.opacity = Math.abs(
+        1 - this.position / AboutComponent.sec1prop.height
+      );
     }
 
     AboutComponent.sec2prop.animate =
