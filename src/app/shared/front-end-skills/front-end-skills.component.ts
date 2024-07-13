@@ -24,7 +24,7 @@ export class FrontEndSkillsComponent {
     if (this.about.getsec3prop.animate && this.js == 0) {
       this.fillBar(1);
     } else if (!this.about.getsec3prop.animate && this.js == 90) {
-      this.emptyBar(1);
+      this.emptyBar();
     }
   }
 
@@ -40,7 +40,7 @@ export class FrontEndSkillsComponent {
     }
   }
 
-  emptyBar(speed: number) {
+  emptyBar() {
     this.js = 0;
     this.ts = 0;
     this.jq = 0;

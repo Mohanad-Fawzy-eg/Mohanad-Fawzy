@@ -1,0 +1,40 @@
+<div class="content">
+  <div class="text">
+    <h1>Back-end</h1>
+
+    <span>These are my most used back-end tools</span>
+  </div>
+  <div class="skills">
+    <div class="node">
+      <img src="node.png" alt="" />
+      <span class="percent">{{ node }}%</span>
+      <div class="progress">
+        <div class="per" [style.width]="node + '%'"></div>
+        <p>My strongest hand</p>
+      </div>
+    </div>
+    <div class="mongo">
+      <img src="mongodb.png" alt="" />
+      <span class="percent">{{ mongo }}%</span>
+      <div class="progress">
+        <div class="per" [style.width]="mongo + '%'"></div>
+        <p>Most used database</p>
+      </div>
+    </div>
+    <div class="firebase">
+      <img src="firebase.png" alt="" />
+      <span class="percent">{{ firebase }}%</span>
+      <div class="progress">
+        <div class="per" [style.width]="firebase + '%'"></div>
+        <p>Still learning</p>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <a (click)="about.setScroll(about.getsec4prop.height)"
+      >Show me the rest of your skills</a
+    >
+    <span> | </span>
+    <a>Show me a sample of your projects</a>
+  </div>
+</div>

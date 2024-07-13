@@ -8,12 +8,19 @@ import {
 import { Router } from '@angular/router';
 import { FullStackComponent } from '../full-stack/full-stack.component';
 import { FrontEndSkillsComponent } from '../front-end-skills/front-end-skills.component';
+import { BackEndSkillsComponent } from '../back-end-skills/back-end-skills.component';
+import { OtherSkillsComponent } from '../other-skills/other-skills.component';
 @Component({
   standalone: true,
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
-  imports: [FullStackComponent, FrontEndSkillsComponent],
+  imports: [
+    FullStackComponent,
+    FrontEndSkillsComponent,
+    BackEndSkillsComponent,
+    OtherSkillsComponent,
+  ],
 })
 export class AboutComponent {
   constructor(private ch: ChangeDetectorRef, private router: Router) {}
@@ -59,6 +66,20 @@ export class AboutComponent {
     animate: false,
   };
 
+  private static sec4prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+  };
+
+  private static sec5prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+  };
+
   public get getsec1prop(): prop {
     return AboutComponent.sec1prop;
   }
@@ -81,6 +102,22 @@ export class AboutComponent {
     AboutComponent.sec3prop = prop;
   }
 
+  public get getsec4prop(): prop {
+    return AboutComponent.sec4prop;
+  }
+
+  public set setsec4prop(prop: prop) {
+    AboutComponent.sec4prop = prop;
+  }
+
+  public get getsec5prop(): prop {
+    return AboutComponent.sec5prop;
+  }
+
+  public set setsec5prop(prop: prop) {
+    AboutComponent.sec5prop = prop;
+  }
+
   async ngAfterViewInit(): Promise<void> {
     AboutComponent.sec1prop.top = this.sec1?.nativeElement.offsetTop;
     AboutComponent.sec1prop.height = this.sec1?.nativeElement.offsetHeight;
@@ -92,6 +129,14 @@ export class AboutComponent {
     AboutComponent.sec3prop.height =
       this.sec3?.nativeElement.offsetHeight +
       this.sec3?.nativeElement.offsetTop;
+    AboutComponent.sec4prop.top = this.sec4?.nativeElement.offsetTop;
+    AboutComponent.sec4prop.height =
+      this.sec4?.nativeElement.offsetHeight +
+      this.sec4?.nativeElement.offsetTop;
+    AboutComponent.sec5prop.top = this.sec5?.nativeElement.offsetTop;
+    AboutComponent.sec5prop.height =
+      this.sec5?.nativeElement.offsetHeight +
+      this.sec5?.nativeElement.offsetTop;
     this.ch.detectChanges();
   }
 
@@ -102,6 +147,8 @@ export class AboutComponent {
   @ViewChild('first') sec1: ElementRef | undefined;
   @ViewChild('second') sec2: ElementRef | undefined;
   @ViewChild('third') sec3: ElementRef | undefined;
+  @ViewChild('fourth') sec4: ElementRef | undefined;
+  @ViewChild('fifth') sec5: ElementRef | undefined;
 
   animateFirst: boolean = false;
 
@@ -120,6 +167,9 @@ export class AboutComponent {
       this.position > AboutComponent.sec2prop.top * 0.6;
     AboutComponent.sec3prop.animate =
       this.position > AboutComponent.sec3prop.top * 0.6;
+    AboutComponent.sec4prop.animate =
+      this.position > AboutComponent.sec4prop.top * 0.8;
+    console.log(this.getsec3prop.height, this.getsec4prop.top * 0.6);
   }
 
   //^ Resize window;
@@ -136,6 +186,14 @@ export class AboutComponent {
     AboutComponent.sec3prop.height =
       this.sec3?.nativeElement.offsetHeight +
       this.sec3?.nativeElement.offsetTop;
+    AboutComponent.sec4prop.top = this.sec4?.nativeElement.offsetTop;
+    AboutComponent.sec4prop.height =
+      this.sec4?.nativeElement.offsetHeight +
+      this.sec4?.nativeElement.offsetTop;
+    AboutComponent.sec5prop.top = this.sec5?.nativeElement.offsetTop;
+    AboutComponent.sec5prop.height =
+      this.sec5?.nativeElement.offsetHeight +
+      this.sec5?.nativeElement.offsetTop;
   }
 
   //& Top arrow calc;

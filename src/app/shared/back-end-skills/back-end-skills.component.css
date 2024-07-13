@@ -49,6 +49,26 @@
   --font-roboto: "Roboto", sans-serif;
   --font-cubano: "Cubano", sans-serif;
 }
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  width: 100%;
+  height: 100%;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
 img {
   max-width: 50px;
   -webkit-user-drag: none;
@@ -58,239 +78,115 @@ img {
   display: block;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr 0.5fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  justify-content: center;
-  user-select: none;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  width: 100%;
-  height: 100%;
-}
-
 .text {
   grid-area: 1 / 1 / 2 / 2;
-  text-align: center !important;
+  text-align: center;
+  padding-top: 3%;
+}
+
+.text h1 {
+  font-family: var(--font-cubano);
+  font-size: 5rem;
+  color: var(--background-color-shade8);
+}
+
+.text span {
+  font-family: var(--font-roboto);
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary-color-shade7);
 }
 
 .skills {
   grid-area: 2 / 1 / 3 / 2;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   align-content: center;
-}
-
-.top {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  justify-content: space-evenly;
-  align-items: center;
   text-align: center;
-  align-self: center;
+  width: 100%;
 }
 
-.top-left {
+.node,
+.mongo,
+.firebase {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
-  width: 50%;
-  max-width: 50%;
-  padding-bottom: 5%;
-}
-
-.top-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  position: relative;
+  align-content: center;
   align-items: center;
-  max-width: 50%;
-  width: 50%;
-  padding-bottom: 5%;
-}
-
-.rest {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  align-self: center;
-  width: 90vw;
-  height: 100%;
-  padding: 0 !important;
-  text-align: left;
-  gap: 30px;
-}
-
-.bottom {
-  grid-area: 3 / 1 / 4 / 2;
+  justify-items: center;
+  place-content: inherit;
   text-align: center;
-  margin-top: 5%;
-}
-
-.content .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center !important;
-  padding-bottom: 5%;
-}
-
-.text h1 {
-  font-family: cubano, sans-serif;
-  font-size: 5rem;
-  color: var(--background-color-shade8);
-  text-align: center !important;
-}
-
-.text span {
-  display: block;
-  font-family: var(--font-roboto);
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: var(--background-color-shade7);
-}
-
-.angular,
-.ts,
-.js,
-.jquery,
-.flutter,
-.vue {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 100%;
-  height: 100%;
 }
 
-.flutter,
-.vue {
-  padding-bottom: 1%;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  text-align: left !important;
-}
-
-.js,
-.ts,
-.angular,
-.jquery {
-  margin-top: 5%;
-}
-
-.js .progress,
-.ts .progress,
-.angular .progress,
-.jquery .progress {
-  width: 60%;
+.progress {
+  width: 50%;
   height: 10px;
   background-color: var(--text-color-shade1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 3%;
+  border-radius: 50px;
+  margin-left: 2%;
+  position: relative;
 }
 
-.flutter .progress,
-.vue .progress {
-  position: relative;
-  width: 30%;
-  height: 10px;
-  background-color: var(--text-color-shade1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 3%;
-}
-
-.js .per,
-.ts .per,
-.angular .per,
-.vue .per,
-.flutter .per,
-.jquery .per {
-  position: relative;
-  width: 50%;
+.per {
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  background-color: var(--primary-color-shade4);
+  width: 50%;
+  background-color: var(--primary-color-main);
   border-radius: 10px;
-}
-
-.angular p,
-.vue p,
-.flutter p,
-.js p,
-.ts p,
-.jquery p {
-  text-align: left !important;
-  position: absolute;
-  text-wrap: nowrap;
-  margin-top: 3%;
-  font-style: italic;
-  font-family: var(--font-rubik);
-  font-weight: bold;
-  color: var(--primary-color-shade7);
-  opacity: 1;
-}
-
-.angular p {
-  margin-left: -4% !important;
-}
-
-.jquery p {
-  margin-left: -12% !important;
-}
-
-.flutter p {
-  margin-left: -8% !important;
-}
-.vue p {
-  margin-left: -15% !important;
 }
 
 .percent {
   position: absolute;
-  display: inline-block;
-  font-family: "Montserrat", sans-serif;
-  z-index: 11;
-  margin-top: -2%;
-  margin-left: -19.5%;
+  margin-top: -6%;
+  margin-left: -30%;
   font-style: italic;
+  font-family: var(--font-montserrat);
   font-weight: bold;
   color: var(--primary-color-shade7);
+
   opacity: 0.4;
 }
 
-.flutter .percent,
-.vue .percent {
-  margin-left: -18% !important;
+p {
+  margin-top: 5%;
+  font-style: italic;
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  color: var(--primary-color-shade7);
+  text-align: left;
+  opacity: 1;
+}
+
+.bottom {
+  grid-area: 3 / 1 / 4 / 2;
+  text-wrap: nowrap;
 }
 
 .bottom a {
-  text-decoration: none;
-  color: var(--text-color-shade7);
-  font-family: var(--font-cubano);
   font-size: 1.4rem;
-  font-weight: bold;
-  transition: all 0.2s ease-in-out;
+  font-family: var(--font-cubano);
+  cursor: pointer;
 }
 
-.bottom a:hover {
-  color: var(--text-color-shade5);
-  cursor: pointer;
+.bottom span {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: var(--font-cubano);
+  color: var(--primary-color-shade6);
+}
+
+.bottom a:first-of-type {
+  color: var(--primary-color-shade7);
+  padding-right: 1%;
+}
+
+.bottom a:last-of-type {
+  color: var(--secondary-color-shade4);
+  padding-left: 1%;
 }

@@ -78,10 +78,10 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  height: 300%;
+  height: 500%;
 }
 
 .content {
@@ -274,5 +274,29 @@
   background-image: url("/wavesOpacity\ \(1\).svg");
   background-size: 150%;
   background-position: left;
+  background-color: var(--background-color-shade4);
+  min-width: 100%;
+  max-width: 100%;
+}
+
+#fourth {
+  z-index: 10;
+  grid-area: 4 / 1 / 5 / 2;
+  height: 100%;
+  width: 100%;
+  background-image: url("/waves\ \(5\).svg");
+  background-position: right;
+  background-size: 250%;
+  background-color: var(--background-color-main);
+}
+
+#fifth {
+  z-index: 10;
+  grid-area: 5 / 1 / 6 / 2;
+  height: 100%;
+  width: 100%;
+  background-image: url("/waves\ \(6\).svg");
+  background-position: right;
+  background-size: 300%;
   background-color: var(--background-color-shade4);
 }

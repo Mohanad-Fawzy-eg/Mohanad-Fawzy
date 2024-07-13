@@ -1,0 +1,324 @@
+@import url("https://fonts.cdnfonts.com/css/cubano");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  --primary-color-main: #008080;
+  --primary-color-shade1: #e6f7f7;
+  --primary-color-shade2: #b3e0e0;
+  --primary-color-shade3: #80c9c9;
+  --primary-color-shade4: #4da6a6;
+  --primary-color-shade5: #005959;
+  --primary-color-shade6: #003d3d;
+  --primary-color-shade7: #002626;
+  --primary-color-shade8: #001313;
+  --secondary-color-main: #ff6b6b;
+  --secondary-color-shade1: #fff5f5;
+  --secondary-color-shade2: #ffe0e0;
+  --secondary-color-shade3: #ffc0c0;
+  --secondary-color-shade4: #ff9e9e;
+  --secondary-color-shade5: #d45555;
+  --secondary-color-shade6: #a63b3b;
+  --secondary-color-shade7: #7f2e2e;
+  --secondary-color-shade8: #4f1c1c;
+  --text-color-main: #36454f;
+  --text-color-shade1: #d7dadc;
+  --text-color-shade2: #afb5b9;
+  --text-color-shade3: #868f95;
+  --text-color-shade4: #5e6a72;
+  --text-color-shade5: #2b373f;
+  --text-color-shade6: #20292f;
+  --text-color-shade7: #161c20;
+  --text-color-shade8: #0b0e10;
+  --background-color-main: #fff8dc;
+  --background-color-shade1: #fffef8;
+  --background-color-shade2: #fffcf1;
+  --background-color-shade3: #fffbea;
+  --background-color-shade4: #fff9e3;
+  --background-color-shade5: #ccc6b0;
+  --background-color-shade6: #999584;
+  --background-color-shade7: #666358;
+  --background-color-shade8: #33322c;
+
+  /*! Fonts */
+  --font-ubuntu-mono: "Ubuntu Mono", monospace;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-rubik: "Rubik", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-cubano: "Cubano", sans-serif;
+}
+
+img {
+  max-width: 50px;
+  max-height: 50px;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  display: block;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.75fr 1.5fr 0.5fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  user-select: none;
+  max-height: 100% !important;
+}
+
+.text {
+  grid-area: 1 / 1 / 2 / 2;
+  text-align: center;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.text h1 {
+  font-size: 3rem;
+  font-family: var(--font-cubano);
+  color: var(--background-color-shade8);
+}
+
+.text .status-map span {
+  font-weight: bold;
+  font-family: var(--font-montserrat);
+  color: var(--background-color-shade1);
+}
+
+.deviders {
+  font-weight: bold;
+  font-family: var(--font-cubano);
+  color: var(--background-color-shade8) !important;
+  font-size: 1.5rem;
+}
+
+.status-map span:nth-child(1) {
+  background-color: var(--primary-color-shade3);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.status-map span:nth-child(3) {
+  background-color: var(--primary-color-main);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.status-map span:nth-child(5) {
+  background-color: var(--primary-color-shade6);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.text .level-map span {
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  color: var(--background-color-shade1);
+}
+
+.level-map span:nth-child(1) {
+  background-color: var(--secondary-color-main);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.level-map span:nth-child(3) {
+  background-color: var(--secondary-color-shade6);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.level-map span:nth-child(5) {
+  background-color: var(--secondary-color-shade8);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 10px;
+}
+
+.skills {
+  grid-area: 2 / 1 / 3 / 2;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  padding: 0 !important;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+}
+
+.java {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.py {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.cpp {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.csh {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.csh img {
+  margin-left: 5%;
+}
+
+.dart {
+  grid-area: 1 / 5 / 2 / 6;
+}
+.ejs {
+  grid-area: 1 / 6 / 2 / 7;
+}
+.hbs {
+  grid-area: 1 / 7 / 2 / 8;
+}
+.hub {
+  grid-area: 2 / 4 / 3 / 5;
+}
+.git {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.gcp {
+  grid-area: 2 / 5 / 3 / 6;
+}
+.web {
+  grid-area: 3 / 3 / 4 / 4;
+}
+.web img {
+  margin-left: 5%;
+}
+.red {
+  grid-area: 3 / 4 / 4 / 5;
+}
+.gql {
+  grid-area: 3 / 5 / 4 / 6;
+}
+.gql img {
+  margin-left: 5%;
+}
+.tf {
+  grid-area: 3 / 6 / 4 / 7;
+}
+.react {
+  grid-area: 3 / 2 / 4 / 3;
+}
+.unity {
+  grid-area: 4 / 5 / 5 / 6;
+}
+.ue {
+  grid-area: 4 / 3 / 5 / 4;
+}
+
+.status {
+  width: 50px;
+  height: 5px;
+  margin-top: 10%;
+  background-color: #001313;
+  border-radius: 10px;
+}
+
+.level {
+  width: 50px;
+  height: 5px;
+  margin-top: 8%;
+  background-color: var(--background-color-shade6);
+  border-radius: 10px;
+}
+
+.java .status {
+  background-color: var(--primary-color-main);
+}
+.java .level {
+  background-color: var(--secondary-color-shade8);
+}
+
+.py .status {
+  background-color: var(--primary-color-main);
+}
+.py .level {
+  background-color: var(--secondary-color-shade6);
+}
+
+.cpp .status {
+  background-color: var(--primary-color-main);
+}
+.cpp .level {
+  background-color: var(--secondary-color-main);
+}
+
+.csh .status {
+  background-color: var(--primary-color-main);
+}
+.csh .level {
+  background-color: var(--secondary-color-main);
+}
+
+.dart .status {
+  background-color: var(--primary-color-main);
+}
+.dart .level {
+  background-color: var(--secondary-color-main);
+}
+
+.ejs .status {
+  background-color: var(--primary-color-shade3);
+}
+
+.ejs .level {
+  background-color: var(--secondary-color-shade8);
+}
+
+.hbs .status {
+  background-color: var(--primary-color-main);
+}
+
+.hbs .level {
+  background-color: var(--secondary-color-shade6);
+}
+
+.git .status {
+  background-color: var(--primary-color-shade3);
+}
+
+.git .level {
+  background-color: var(--secondary-color-shade8);
+}
+
+.hub .status {
+  background-color: var(--primary-color-shade3);
+}
+
+.hub .level {
+  background-color: var(--secondary-color-shade8);
+}
+
+.gcp .status {
+  background-color: var(--primary-color-shade3);
+}
+
+.gcp .level {
+  background-color: var(--secondary-color-shade6);
+}
+
+.react .status {
+  background-color: var(--primary-color-shade6);
+}
+
+.react .level {
+  background-color: var(--secondary-color-main);
+}
+
+.bottom {
+  grid-area: 3 / 1 / 4 / 2;
+}
