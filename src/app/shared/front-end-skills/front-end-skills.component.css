@@ -42,20 +42,59 @@
   --background-color-shade7: #666358;
   --background-color-shade8: #33322c;
 
+  /*? Support colors */
+  --support-color-1-main: #800000;
+  --support-color-1-shade1: #e6cccc;
+  --support-color-1-shade2: #cc9999;
+  --support-color-1-shade3: #b36666;
+  --support-color-1-shade4: #993333;
+  --support-color-1-shade5: #660000;
+  --support-color-1-shade6: #4d0000;
+  --support-color-1-shade7: #330000;
+  --support-color-1-shade8: #1a0000;
+
+  --support-color-2-main: #400080;
+  --support-color-2-shade1: #d9cce6;
+  --support-color-2-shade2: #b399cc;
+  --support-color-2-shade3: #8c66b3;
+  --support-color-2-shade4: #663399;
+  --support-color-2-shade5: #330066;
+  --support-color-2-shade6: #26004d;
+  --support-color-2-shade7: #1a0033;
+  --support-color-2-shade8: #0d001a;
+
   /*! Fonts */
   --font-ubuntu-mono: "Ubuntu Mono", monospace;
   --font-montserrat: "Montserrat", sans-serif;
   --font-rubik: "Rubik", sans-serif;
   --font-roboto: "Roboto", sans-serif;
   --font-cubano: "Cubano", sans-serif;
+
+  /*^ Sizes and spaces */
+  --extra-small: 0.25rem;
+  --relative-small: 0.5rem;
+  --small: 0.75rem;
+  --mid-small: 1rem;
+  --mid-mid: 1.25rem;
+  --mid-large: 1.5rem;
+  --large: 2rem;
+  --relative-large: 3rem;
+  --extra-large: 4rem;
+  --huge: 5rem;
+  --extra-huge: 6rem;
 }
+
 img {
-  max-width: 50px;
+  max-width: 60px;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
   display: block;
+}
+
+.angular img {
+  max-width: 70px;
 }
 
 .content {
@@ -79,62 +118,24 @@ img {
 }
 
 .skills {
+  min-width: 100vw !important;
+  height: 100%;
   grid-area: 2 / 1 / 3 / 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  justify-items: center;
   align-items: center;
   align-content: center;
-}
-
-.top {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  align-self: center;
-}
-
-.top-left {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: left;
-  width: 50%;
-  max-width: 50%;
-  padding-bottom: 5%;
-}
-
-.top-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 50%;
-  width: 50%;
-  padding-bottom: 5%;
-}
-
-.rest {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  width: 90vw;
-  height: 100%;
-  padding: 0 !important;
-  text-align: left;
-  gap: 30px;
 }
 
 .bottom {
   grid-area: 3 / 1 / 4 / 2;
   text-align: center;
-  margin-top: 5%;
+  transition: transform 0.2s ease-in-out;
 }
 
 .content .text {
@@ -161,24 +162,38 @@ img {
   color: var(--background-color-shade7);
 }
 
+.js {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.html {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.css {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.ts {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.angular {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.jquery {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
 .angular,
 .ts,
 .js,
 .jquery,
-.flutter,
-.vue {
+.html,
+.css {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-
-.flutter,
-.vue {
-  padding-bottom: 1%;
-  align-self: center;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -186,41 +201,26 @@ img {
   text-align: left !important;
 }
 
-.js,
-.ts,
-.angular,
-.jquery {
-  margin-top: 5%;
-}
-
 .js .progress,
 .ts .progress,
 .angular .progress,
-.jquery .progress {
-  width: 60%;
+.jquery .progress,
+.html .progress,
+.css .progress {
+  width: 50%;
   height: 10px;
   background-color: var(--text-color-shade1);
   border-radius: 10px;
   overflow: hidden;
   margin-left: 3%;
-}
-
-.flutter .progress,
-.vue .progress {
-  position: relative;
-  width: 30%;
-  height: 10px;
-  background-color: var(--text-color-shade1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-left: 3%;
+  z-index: 12;
 }
 
 .js .per,
 .ts .per,
 .angular .per,
-.vue .per,
-.flutter .per,
+.css .per,
+.html .per,
 .jquery .per {
   position: relative;
   width: 50%;
@@ -229,11 +229,12 @@ img {
   height: 100%;
   background-color: var(--primary-color-shade4);
   border-radius: 10px;
+  z-index: 12;
 }
 
 .angular p,
-.vue p,
-.flutter p,
+.css p,
+.html p,
 .js p,
 .ts p,
 .jquery p {
@@ -248,49 +249,104 @@ img {
   opacity: 1;
 }
 
-.angular p {
-  margin-left: -4% !important;
-}
-
-.jquery p {
-  margin-left: -12% !important;
-}
-
-.flutter p {
-  margin-left: -8% !important;
-}
-.vue p {
-  margin-left: -15% !important;
-}
-
-.percent {
+.title {
   position: absolute;
   display: inline-block;
   font-family: "Montserrat", sans-serif;
   z-index: 11;
-  margin-top: -2%;
-  margin-left: -19.5%;
+  margin-top: -1.5%;
+  margin-left: 0%;
   font-style: italic;
   font-weight: bold;
-  color: var(--primary-color-shade7);
-  opacity: 0.4;
+  color: var(--background-color-shade2);
+  background-color: var(--primary-color-shade4);
+  width: fit-content;
+  padding-right: 1%;
+  padding-left: 0.4%;
+  padding-bottom: 0.55%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 5px;
+  text-align: left;
+  line-height: var(--mid-large);
 }
 
-.flutter .percent,
-.vue .percent {
-  margin-left: -18% !important;
+.js .title,
+.js .per {
+  background-color: #f0db4f;
+  color: var(--text-color-shade8);
+}
+.ts .title,
+.ts .per {
+  background-color: #3178c6;
+  color: var(--background-color-shade1);
+}
+
+.angular .title,
+.angular .per {
+  background-color: #c3002f;
+  color: var(--background-color-shade1);
+}
+
+.jquery .title,
+.jquery .per {
+  background-color: #0868ac;
+  color: var(--background-color-shade1);
+}
+
+.html .title,
+.html .per {
+  background-color: #e44d26;
+  color: var(--background-color-shade1);
+}
+
+.css .title,
+.css .per {
+  background-color: #1572b6;
+  color: var(--background-color-shade1);
+}
+
+.js p,
+.ts p {
+  margin-left: 2.5%;
+}
+
+.angular p {
+  margin-left: -1%;
+}
+
+.css p {
+  margin-left: -7%;
+}
+
+.html p {
+  margin-left: -4%;
+}
+
+.jquery p {
+  margin-left: -9%;
 }
 
 .bottom a {
+  text-wrap: nowrap;
   text-decoration: none;
-  color: var(--text-color-shade7);
+  color: var(--background-color-shade1);
   font-family: var(--font-cubano);
   font-size: 1.4rem;
-  font-weight: bold;
+  background-color: var(--primary-color-main);
+  border-radius: 30px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   transition: all 0.2s ease-in-out;
 }
 
 .bottom a:hover {
-  color: var(--text-color-shade5);
+  background-color: var(--primary-color-shade5);
   cursor: pointer;
+}
+
+.bottom:active {
+  transform: scale(0.9);
 }

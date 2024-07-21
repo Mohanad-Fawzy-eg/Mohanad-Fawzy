@@ -5,69 +5,60 @@
   </div>
 
   <div class="skills">
-    <div class="top">
-      <div class="top-left">
-        <div class="js">
-          <img src="js.png" alt="" />
-          <span class="percent">{{ js }}%</span>
-          <div class="progress">
-            <div class="per" [style.width]="js + '%'"></div>
-          </div>
+    <div class="js">
+      <img src="svgs/js.svg" alt="" />
+      <div class="progress">
+        <span class="title">JavaScript</span>
+        <div class="per" [style.width]="js + '%'"></div>
+      </div>
 
-          <p>This is my main programming language</p>
-        </div>
-        <div class="ts">
-          <img src="typescript.png" alt="" />
-          <span class="percent">{{ ts }}%</span>
-          <div class="progress">
-            <div class="per" [style.width]="ts + '%'"></div>
-          </div>
-          <p>Ofcourse I use TypeScript, it is awsome</p>
-        </div>
+      <p>This is my main programming language</p>
+    </div>
+    <div class="ts">
+      <img src="svgs/ts.svg" alt="" />
+      <div class="progress">
+        <span class="title">TypeScript</span>
+        <div class="per" [style.width]="ts + '%'"></div>
       </div>
-      <div class="top-right">
-        <div class="angular">
-          <img src="angular-icon-logo.png" alt="" />
-          <span class="percent">{{ ng }}%</span>
-          <div class="progress">
-            <div class="per" [style.width]="ng + '%'"></div>
-          </div>
-          <p>This app was made with Angular</p>
-        </div>
-        <div class="jquery">
-          <img src="jquery-icon-2018x2048-nrk2gcih.png" alt="" />
-          <span class="percent">{{ jq }}%</span>
-          <div class="progress">
-            <div class="per" [style.width]="jq + '%'"></div>
-          </div>
-          <p>Still perfer Angular</p>
-        </div>
-      </div>
+      <p>Ofcourse I use TypeScript, it is awsome</p>
     </div>
 
-    <div class="rest">
-      <div class="flutter">
-        <img src="flutter-logo-5086DD11C5-seeklogo.com.png" alt="" />
-        <span class="percent">{{ ft }}%</span>
-        <div class="progress">
-          <div class="per" [style.width]="ft + '%'"></div>
-        </div>
-        <p>Haven't used in a while</p>
+    <div class="angular">
+      <img src="svgs/ng.svg" alt="" />
+      <div class="progress">
+        <span class="title">Angular</span>
+        <div class="per" [style.width]="ng + '%'"></div>
       </div>
-      <div class="vue">
-        <img src="vue-icon-2048x1766-ntogpmti.png" alt="" />
-        <span class="percent">{{ vu }}%</span>
-        <div class="progress">
-          <div class="per" [style.width]="vu + '%'"></div>
-        </div>
-        <p>Basic level</p>
+      <p>This app was made with Angular</p>
+    </div>
+    <div class="jquery">
+      <img src="svgs/jq.svg" alt="" />
+      <div class="progress">
+        <span class="title">jQuery</span>
+        <div class="per" [style.width]="jq + '%'"></div>
       </div>
+      <p>Still perfer Angular</p>
+    </div>
+
+    <div class="html">
+      <img src="svgs/html.svg" alt="" />
+      <div class="progress">
+        <span class="title">HTML 5</span>
+        <div class="per" [style.width]="ht + '%'"></div>
+      </div>
+      <p>Like, it does not even count</p>
+    </div>
+    <div class="css">
+      <img src="svgs/css.svg" alt="" />
+      <div class="progress">
+        <span class="title">CSS 3</span>
+        <div class="per" [style.width]="cs + '%'"></div>
+      </div>
+      <p>99.9% of me hates CSS</p>
     </div>
   </div>
 
   <div class="bottom">
-    <a (click)="about.setScroll(about.getsec3prop.height)"
-      >What about backend ?</a
-    >
+    <a (click)="about.setScroll(about.getsec3prop.height)">What else?</a>
   </div>
 </div>

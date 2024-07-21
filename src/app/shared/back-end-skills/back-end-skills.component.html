@@ -6,25 +6,32 @@
   </div>
   <div class="skills">
     <div class="node">
-      <img src="node.png" alt="" />
-      <span class="percent">{{ node }}%</span>
+      <img src="svgs/node.svg" alt="" />
       <div class="progress">
+        <span class="title">Node.js</span>
         <div class="per" [style.width]="node + '%'"></div>
         <p>My strongest hand</p>
       </div>
     </div>
-    <div class="mongo">
-      <img src="mongodb.png" alt="" />
-      <span class="percent">{{ mongo }}%</span>
+    <div class="exp">
+      <img src="svgs/exp.svg" alt="" />
       <div class="progress">
+        <span class="title">Express.js</span>
         <div class="per" [style.width]="mongo + '%'"></div>
         <p>Most used database</p>
       </div>
     </div>
-    <div class="firebase">
-      <img src="firebase.png" alt="" />
-      <span class="percent">{{ firebase }}%</span>
+    <div class="mongo">
+      <img src="svgs/mongo.svg" alt="" />
       <div class="progress">
+        <div class="title">
+          <span style="z-index: 12 !important">MongoDB</span>
+          <div
+            class="per"
+            [style.width]="firebase * 5 + '%'"
+            style="z-index: 11 !important"
+          ></div>
+        </div>
         <div class="per" [style.width]="firebase + '%'"></div>
         <p>Still learning</p>
       </div>

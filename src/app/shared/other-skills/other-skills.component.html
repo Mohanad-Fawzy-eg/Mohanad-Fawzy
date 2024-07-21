@@ -13,92 +13,168 @@
     </div>
   </div>
   <div class="skills">
-    <div class="java">
-      <img src="java.png" alt="" />
+    <div class="blur-1" [style.opacity]="scroll > 0 ? 0.8 : 0"></div>
+    <div class="blur-2" [style.opacity]="scroll < 1400 ? 0.8 : 0"></div>
+    <button class="arrow-left" (click)="slide(1)" (dblclick)="slideToEnd(1)">
+      <i class="bx bx-chevron-right"></i>
+    </button>
+    <button class="arrow-right" (click)="slide(-1)" (dblclick)="slideToEnd(-1)">
+      <i class="bx bx-chevron-left"></i>
+    </button>
+    <div class="java" [style.margin-left]="-scroll + '%'">
+      <span>Java v21</span>
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="java.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="py">
-      <img src="python.png" alt="" />
+    <div class="py" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="python.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="cpp">
-      <img src="cpp.png" alt="" />
+    <div class="cpp" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="cpp.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="csh">
-      <img src="csh.png" alt="" />
+    <div class="csh" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="csh.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="dart">
-      <img src="dart.png" alt="" />
+    <div class="dart" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="dart.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="ejs">
-      <img src="ejs.png" alt="" />
+    <div class="ejs" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="ejs.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="hbs">
-      <img src="hbs.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <!--! Second row-->
-    <div class="git">
-      <img src="git.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="hub">
-      <img src="github.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="gcp">
-      <img src="gcp.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <!--? Third row-->
-    <div class="react">
-      <img src="react.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="web">
-      <img src="webpack.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="red">
-      <img src="redis.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="gql">
-      <img src="graphql.png" alt="" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="tf">
-      <img src="tensorflow.png" alt="" />
+    <div class="hbs" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="hbs.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
 
-    <!--~ Fourth row-->
-    <div class="ue">
-      <img src="ue4.png" alt="" />
+    <div class="git" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="git.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="unity">
-      <img src="unity.png" alt="" />
+    <div class="hub" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="github.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="gcp" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="gcp.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="react" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="react.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="web" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="webpack.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="red" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="redis.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="gql" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="graphql.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="tf" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="tensorflow.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="ue" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="ue4.png" alt="" loading="lazy" />
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+    <div class="unity" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1600 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <img src="unity.png" alt="" loading="lazy" />
       <div class="status"></div>
       <div class="level"></div>
     </div>

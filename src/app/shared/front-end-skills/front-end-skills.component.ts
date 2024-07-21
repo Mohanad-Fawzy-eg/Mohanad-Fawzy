@@ -16,8 +16,8 @@ export class FrontEndSkillsComponent {
   ts: number = 0;
   jq: number = 0;
   ng: number = 0;
-  ft: number = 0;
-  vu: number = 0;
+  ht: number = 0;
+  cs: number = 0;
 
   @HostListener('window:scroll', ['$event'])
   async onScroll(event: any) {
@@ -34,8 +34,8 @@ export class FrontEndSkillsComponent {
       this.ts = Math.round((this.ts + (70 / 100) * speed) * 100) / 100;
       this.jq = Math.round((this.jq + (50 / 100) * speed) * 100) / 100;
       this.ng = Math.round((this.ng + (60 / 100) * speed) * 100) / 100;
-      this.ft = Math.round((this.ft + (30 / 100) * speed) * 100) / 100;
-      this.vu = Math.round((this.vu + (20 / 100) * speed) * 100) / 100;
+      this.ht = Math.round((this.ht + 1 * speed) * 100) / 100;
+      this.cs = Math.round((this.cs + (80 / 100) * speed) * 100) / 100;
       setTimeout(this.fillBar.bind(this), 10, speed);
     }
   }
@@ -45,7 +45,7 @@ export class FrontEndSkillsComponent {
     this.ts = 0;
     this.jq = 0;
     this.ng = 0;
-    this.ft = 0;
-    this.vu = 0;
+    this.ht = 0;
+    this.cs = 0;
   }
 }

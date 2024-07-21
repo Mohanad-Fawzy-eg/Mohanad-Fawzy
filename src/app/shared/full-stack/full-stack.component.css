@@ -42,12 +42,46 @@
   --background-color-shade7: #666358;
   --background-color-shade8: #33322c;
 
+  /*? Support colors */
+  --support-color-1-main: #800000;
+  --support-color-1-shade1: #e6cccc;
+  --support-color-1-shade2: #cc9999;
+  --support-color-1-shade3: #b36666;
+  --support-color-1-shade4: #993333;
+  --support-color-1-shade5: #660000;
+  --support-color-1-shade6: #4d0000;
+  --support-color-1-shade7: #330000;
+  --support-color-1-shade8: #1a0000;
+
+  --support-color-2-main: #400080;
+  --support-color-2-shade1: #d9cce6;
+  --support-color-2-shade2: #b399cc;
+  --support-color-2-shade3: #8c66b3;
+  --support-color-2-shade4: #663399;
+  --support-color-2-shade5: #330066;
+  --support-color-2-shade6: #26004d;
+  --support-color-2-shade7: #1a0033;
+  --support-color-2-shade8: #0d001a;
+
   /*! Fonts */
   --font-ubuntu-mono: "Ubuntu Mono", monospace;
   --font-montserrat: "Montserrat", sans-serif;
   --font-rubik: "Rubik", sans-serif;
   --font-roboto: "Roboto", sans-serif;
   --font-cubano: "Cubano", sans-serif;
+
+  /*^ Sizes and spaces */
+  --extra-small: 0.25rem;
+  --relative-small: 0.5rem;
+  --small: 0.75rem;
+  --mid-small: 1rem;
+  --mid-mid: 1.25rem;
+  --mid-large: 1.5rem;
+  --large: 2rem;
+  --relative-large: 3rem;
+  --extra-large: 4rem;
+  --huge: 5rem;
+  --extra-huge: 6rem;
 }
 
 .content {
