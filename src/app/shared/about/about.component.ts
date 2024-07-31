@@ -157,7 +157,7 @@ export class AboutComponent {
   async onScroll(event: any) {
     this.position = window.scrollY;
     this.topArrowOpacity = this.position / AboutComponent.sec1prop.height;
-    if (this.getsec1prop.opacity != 0) {
+    if (this.getsec1prop.opacity > 0 || this.position < this.getsec2prop.top) {
       AboutComponent.sec1prop.opacity = Math.abs(
         1 - this.position / AboutComponent.sec1prop.height
       );
@@ -169,7 +169,9 @@ export class AboutComponent {
       this.position > AboutComponent.sec3prop.top * 0.6;
     AboutComponent.sec4prop.animate =
       this.position > AboutComponent.sec4prop.top * 0.8;
-    console.log(this.getsec3prop.height, this.getsec4prop.top * 0.6);
+
+    AboutComponent.sec5prop.animate =
+      this.position > AboutComponent.sec5prop.top * 0.8;
   }
 
   //^ Resize window;

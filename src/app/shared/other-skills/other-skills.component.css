@@ -63,6 +63,16 @@
   --support-color-2-shade7: #1a0033;
   --support-color-2-shade8: #0d001a;
 
+  --support-color-3-main: #408000;
+  --support-color-3-shade1: #d9e6cc;
+  --support-color-3-shade2: #b3cc99;
+  --support-color-3-shade3: #8cb366;
+  --support-color-3-shade4: #669933;
+  --support-color-3-shade5: #336600;
+  --support-color-3-shade6: #264d00;
+  --support-color-3-shade7: #1a3300;
+  --support-color-3-shade8: #0d1a00;
+
   /*! Fonts */
   --font-ubuntu-mono: "Ubuntu Mono", monospace;
   --font-montserrat: "Montserrat", sans-serif;
@@ -83,7 +93,6 @@
   --huge: 5rem;
   --extra-huge: 6rem;
 }
-
 img {
   max-width: 50px;
   max-height: 50px;
@@ -97,7 +106,7 @@ img {
 .content {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.75fr 1.5fr 0.5fr;
+  grid-template-rows: 0.75fr 1.5fr 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   user-select: none;
@@ -109,13 +118,17 @@ img {
   grid-area: 1 / 1 / 2 / 2;
   text-align: center;
   padding-top: 3%;
-  padding-bottom: 3%;
+  padding-bottom: 5%;
 }
 
 .text h1 {
   font-size: 3rem;
   font-family: var(--font-cubano);
   color: var(--background-color-shade8);
+  width: 85%;
+  margin: auto;
+  justify-self: center;
+  padding-bottom: 1%;
 }
 
 .text .status-map span {
@@ -132,21 +145,21 @@ img {
 }
 
 .status-map span:nth-child(1) {
-  background-color: var(--primary-color-shade3);
+  background-color: var(--secondary-color-shade5);
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
 }
 
 .status-map span:nth-child(3) {
-  background-color: var(--primary-color-main);
+  background-color: #82461b;
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
 }
 
 .status-map span:nth-child(5) {
-  background-color: var(--primary-color-shade6);
+  background-color: var(--secondary-color-shade8);
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
@@ -159,21 +172,21 @@ img {
 }
 
 .level-map span:nth-child(1) {
-  background-color: var(--secondary-color-main);
+  background-color: var(--primary-color-main);
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
 }
 
 .level-map span:nth-child(3) {
-  background-color: var(--secondary-color-shade6);
+  background-color: var(--support-color-2-main);
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
 }
 
 .level-map span:nth-child(5) {
-  background-color: var(--secondary-color-shade8);
+  background-color: var(--text-color-shade7);
   padding-left: 1%;
   padding-right: 1%;
   border-radius: 10px;
@@ -194,15 +207,16 @@ img {
   padding: 0;
   align-self: center;
   justify-self: center;
-  width: calc(100% - (100% / 3) - 5rem);
+  width: 0%;
   height: fit-content;
   overflow: hidden;
+  border-left: 5px solid var(--background-color-shade8);
+  border-right: 5px solid var(--background-color-shade8);
   border-radius: 10px;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 1%;
-
-  border: 3px solid var(--primary-color-shade6);
+  margin-top: 3%;
 }
 
 .blur-1 {
@@ -213,8 +227,10 @@ img {
   box-shadow: inset 50px 0px 70px -25px var(--background-color-shade6);
   height: 100%;
   width: 100%;
-  opacity: 0.8;
+  opacity: 1;
   transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  border-radius: 5px;
 }
 
 .blur-2 {
@@ -225,8 +241,10 @@ img {
   box-shadow: inset -50px 0px 70px -25px var(--background-color-shade6);
   height: 100%;
   width: 100%;
-  opacity: 0.8;
+  opacity: 1;
   transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  border-radius: 5px;
 }
 
 .glass {
@@ -241,190 +259,401 @@ img {
   transition: all 2s ease-in-out;
 }
 
-.java,
-.py,
-.cpp,
-.csh,
-.dart,
-.ejs,
-.hbs,
-.git,
-.hub,
-.gcp,
-.web,
-.red,
-.gql,
-.tf,
-.react,
-.unity,
-.ue {
+.card {
   z-index: 12;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--mid-mid);
+  gap: var(--small);
   justify-content: center;
   align-items: center;
   align-content: center;
   justify-items: center;
+  text-align: center !important;
   min-width: 200px;
+  max-width: 200px;
   height: 250px;
 
-  background-color: var(--secondary-color-shade1);
-  border: 3px solid var(--primary-color-shade5);
+  background-image: url("/waves.svg");
+  background-position: left;
+  background-size: 350%;
+  background-color: var(--background-color-shade4);
+  border: 3px solid var(--background-color-shade8);
   border-radius: 10px;
 
   -webkit-box-shadow: 5px 6px 12px 0px var(--background-color-shade6);
   -moz-box-shadow: 5px 6px 12px 0px var(--background-color-shade6);
   box-shadow: 5px 6px 5px 0px var(--background-color-shade6);
 
-  transition: margin 1s;
-}
-.arrow-left {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  z-index: 13;
-  position: absolute;
-  margin-left: 96.5%;
-  font-size: 1.5rem;
-  height: 30px;
-  width: 30px;
-  border-radius: 100%;
-  color: var(--primary-color-main);
-  background-color: var(--primary-color-shade2);
-  border: 0;
+  transition: margin 1s, -webkit-box-shadow 0.25s, -moz-box-shadow 0.25s,
+    box-shadow 0.25s;
 }
 
+.card:hover {
+  -webkit-box-shadow: 5px 6px 12px 0px var(--background-color-shade8);
+  -moz-box-shadow: 5px 6px 12px 0px var(--background-color-shade8);
+  box-shadow: 5px 6px 5px 0px var(--background-color-shade8);
+}
+
+.card span {
+  font-size: 1.5rem;
+  color: var(--background-color-shade8);
+  font-family: var(--font-cubano);
+  opacity: 1;
+}
+
+.card p {
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-wrap: wrap !important;
+  color: var(--text-color-shade6);
+}
+
+.arrow-left {
+  margin-left: 96.5%;
+}
+.arrow-right {
+  margin-left: 0.25%;
+  transform: translateX(-150%);
+}
+
+.arrow-left,
 .arrow-right {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   justify-items: center;
-  z-index: 13;
+  z-index: 14;
   position: absolute;
-  margin-left: 0%;
-  font-size: 1.5rem;
   height: 30px;
   width: 30px;
+  font-size: 1.5rem;
   border-radius: 100%;
-  color: var(--primary-color-main);
-  background-color: var(--primary-color-shade2);
+  color: var(--background-color-shade1);
+  background-color: var(--background-color-shade8);
   border: 0;
+  cursor: pointer;
 }
 
-/*! Status-level */
-
-.web img {
-  margin-left: 5%;
+.arrow-left:hover,
+.arrow-right:hover {
+  -webkit-box-shadow: 0px 0px 15px 0px var(--background-color-shade1);
+  -moz-box-shadow: 0px 0px 15px 0px var(--background-color-shade1);
+  box-shadow: 0px 0px 15px 0px var(--background-color-shade1);
 }
 
-.gql img {
-  margin-left: 5%;
+.arrow-left:active,
+.arrow-right:active {
+  background-color: var(--background-color-shade1);
+  color: var(--background-color-shade8);
+}
+
+/*! Status-level-classifications */
+
+.classif {
+  display: flex;
+  z-index: 12;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 50px;
+  background-color: var(--background-color-shade5);
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.classif p {
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  font-size: 0.65rem;
+  text-wrap: wrap !important;
+  margin: 0;
+  color: var(--background-color-shade1) !important;
+  text-align: center;
 }
 
 .status {
-  width: 50px;
-  height: 5px;
-  margin-top: 10%;
+  width: 25%;
+  height: 15px;
   background-color: #001313;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 
 .level {
-  width: 50px;
-  height: 5px;
-  margin-top: 8%;
-  background-color: var(--background-color-shade6);
-  border-radius: 10px;
+  width: 25%;
+  height: 15px;
+  margin-top: -5%;
+  background-color: var(--background-color-shade5);
+  border-radius: 50px;
+}
+
+.java .classif,
+.py .classif,
+.cpp .classif,
+.csh .classif,
+.dart .classif {
+  background-color: var(--secondary-color-shade5);
+}
+
+.flutter .classif,
+.react .classif,
+.vue .classif {
+  background-color: var(--primary-color-shade5);
+}
+
+.web .classif,
+.as .classif {
+  background-color: var(--primary-color-shade4);
+}
+
+.boot .classif,
+.tw .classif {
+  background-color: var(--support-color-1-shade7);
+}
+
+.next .classif,
+.net .classif {
+  background-color: var(--support-color-1-shade5);
+}
+
+.exp .classif,
+.post .classif,
+.ejs .classif,
+.hbs .classif {
+  background-color: var(--support-color-3-shade5);
+}
+
+.firebase .classif,
+.red .classif {
+  background-color: var(--support-color-2-shade5);
+}
+
+.git .classif,
+.github .classif,
+.gcp .classif {
+  background-color: var(--support-color-1-shade4);
+}
+
+.jl .classif,
+.tf .classif {
+  background-color: var(--support-color-3-shade7);
+}
+
+.ue4 .classif,
+.unity .classif {
+  background-color: var(--support-color-2-shade5);
 }
 
 .java .status {
-  background-color: var(--primary-color-main);
+  background-color: var(--secondary-color-shade8);
 }
 .java .level {
-  background-color: var(--secondary-color-shade8);
+  background-color: var(--text-color-shade8);
 }
 
 .py .status {
-  background-color: var(--primary-color-main);
+  background-color: #82461b;
 }
 .py .level {
-  background-color: var(--secondary-color-shade6);
+  background-color: var(--support-color-2-main);
 }
 
 .cpp .status {
-  background-color: var(--primary-color-main);
+  background-color: #82461b;
 }
 .cpp .level {
-  background-color: var(--secondary-color-main);
+  background-color: var(--primary-color-main);
 }
 
 .csh .status {
-  background-color: var(--primary-color-main);
+  background-color: #82461b;
 }
 .csh .level {
-  background-color: var(--secondary-color-main);
+  background-color: var(--primary-color-main);
 }
 
 .dart .status {
-  background-color: var(--primary-color-main);
+  background-color: #82461b;
 }
 .dart .level {
-  background-color: var(--secondary-color-main);
-}
-
-.ejs .status {
-  background-color: var(--primary-color-shade3);
-}
-
-.ejs .level {
-  background-color: var(--secondary-color-shade8);
-}
-
-.hbs .status {
   background-color: var(--primary-color-main);
 }
 
-.hbs .level {
-  background-color: var(--secondary-color-shade6);
+.flutter .status {
+  background-color: #82461b;
 }
-
-.git .status {
-  background-color: var(--primary-color-shade3);
-}
-
-.git .level {
-  background-color: var(--secondary-color-shade8);
-}
-
-.hub .status {
-  background-color: var(--primary-color-shade3);
-}
-
-.hub .level {
-  background-color: var(--secondary-color-shade8);
-}
-
-.gcp .status {
-  background-color: var(--primary-color-shade3);
-}
-
-.gcp .level {
-  background-color: var(--secondary-color-shade6);
+.flutter .level {
+  background-color: var(--primary-color-main);
 }
 
 .react .status {
-  background-color: var(--primary-color-shade6);
+  background-color: var(--secondary-color-shade5);
+}
+.react .level {
+  background-color: var(--primary-color-main);
 }
 
-.react .level {
-  background-color: var(--secondary-color-main);
+.vue .status {
+  background-color: var(--secondary-color-shade5);
+}
+.vue .level {
+  background-color: var(--primary-color-main);
+}
+
+.web .status {
+  background-color: #82461b;
+}
+
+.web .level {
+  background-color: var(--support-color-2-main);
+}
+
+.as .status {
+  background-color: #82461b;
+}
+
+.as .level {
+  background-color: var(--support-color-2-main);
+}
+
+.boot .status,
+.tw .status {
+  background-color: var(--secondary-color-shade8);
+}
+
+.boot .level,
+.tw .level {
+  background-color: var(--text-color-shade8);
+}
+
+.next .status,
+.net .status {
+  background-color: var(--secondary-color-shade5);
+}
+
+.next .level,
+.net .level {
+  background-color: var(--primary-color-main);
+}
+
+.exp .status,
+.post .status,
+.ejs .status,
+.hbs .status {
+  background-color: var(--secondary-color-shade8);
+}
+
+.exp .level,
+.post .level,
+.ejs .level,
+.hbs .level {
+  background-color: var(--text-color-shade8);
+}
+
+.firebase .status,
+.red .status {
+  background-color: var(--secondary-color-shade5);
+}
+
+.firebase .level,
+.red .level {
+  background-color: var(--primary-color-main);
+}
+
+.git .status,
+.github .status {
+  background-color: var(--secondary-color-shade8);
+}
+
+.git .level,
+.github .level {
+  background-color: var(--text-color-shade8);
+}
+
+.gcp .status {
+  background-color: var(--secondary-color-shade8);
+}
+
+.gcp .level {
+  background-color: var(--primary-color-main);
+}
+
+.jl .status {
+  background-color: #82461b;
+}
+
+.jl .level {
+  background-color: var(--support-color-2-main);
+}
+
+.tf .status {
+  background-color: #82461b;
+}
+
+.tf .level {
+  background-color: var(--primary-color-main);
+}
+
+.ue4 .status,
+.unity .status {
+  background-color: #82461b;
+}
+
+.ue4 .level,
+.unity .level {
+  background-color: var(--support-color-2-main);
 }
 
 .bottom {
+  position: relative;
   grid-area: 3 / 1 / 4 / 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0rem;
+}
+
+.bottom p {
+  position: relative;
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-cubano);
+  color: var(--background-color-shade8);
+}
+
+.bottom button {
+  text-wrap: nowrap;
+  text-decoration: none;
+  color: var(--background-color-shade1);
+  font-family: var(--font-cubano);
+  font-size: 1.4rem;
+  background-color: var(--primary-color-main);
+  border-radius: 30px;
+  padding-left: 1%;
+  padding-right: 1%;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.bottom button:hover {
+  background-color: var(--primary-color-shade5);
+  cursor: pointer;
+}
+
+.bottom button:active {
+  transform: scale(0.9);
 }

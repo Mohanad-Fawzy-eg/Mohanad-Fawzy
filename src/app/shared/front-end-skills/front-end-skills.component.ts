@@ -36,7 +36,7 @@ export class FrontEndSkillsComponent {
       this.ng = Math.round((this.ng + (60 / 100) * speed) * 100) / 100;
       this.ht = Math.round((this.ht + 1 * speed) * 100) / 100;
       this.cs = Math.round((this.cs + (80 / 100) * speed) * 100) / 100;
-      setTimeout(this.fillBar.bind(this), 10, speed);
+      setTimeout(this.fillBar.bind(this), 15, speed);
     }
   }
 

@@ -10,38 +10,32 @@
       <div class="progress">
         <span class="title">Node.js</span>
         <div class="per" [style.width]="node + '%'"></div>
-        <p>My strongest hand</p>
       </div>
+      <p>Forced to use it</p>
     </div>
+
     <div class="exp">
       <img src="svgs/exp.svg" alt="" />
       <div class="progress">
         <span class="title">Express.js</span>
-        <div class="per" [style.width]="mongo + '%'"></div>
-        <p>Most used database</p>
+        <div class="per" [style.width]="exp + '%'"></div>
       </div>
+      <p>I can build cool APIs with it</p>
     </div>
     <div class="mongo">
       <img src="svgs/mongo.svg" alt="" />
       <div class="progress">
-        <div class="title">
-          <span style="z-index: 12 !important">MongoDB</span>
-          <div
-            class="per"
-            [style.width]="firebase * 5 + '%'"
-            style="z-index: 11 !important"
-          ></div>
-        </div>
-        <div class="per" [style.width]="firebase + '%'"></div>
-        <p>Still learning</p>
+        <span class="title">MongoDB</span>
+        <div class="per" [style.width]="mongo + '%'"></div>
       </div>
+      <p>My beloved database</p>
     </div>
   </div>
   <div class="bottom">
-    <a (click)="about.setScroll(about.getsec4prop.height)"
-      >Show me the rest of your skills</a
-    >
+    <button (click)="about.setScroll(about.getsec4prop.height)">
+      What else?
+    </button>
     <span> | </span>
-    <a>Show me a sample of your projects</a>
+    <button>I don't care</button>
   </div>
 </div>

@@ -63,6 +63,16 @@
   --support-color-2-shade7: #1a0033;
   --support-color-2-shade8: #0d001a;
 
+  --support-color-3-main: #408000;
+  --support-color-3-shade1: #d9e6cc;
+  --support-color-3-shade2: #b3cc99;
+  --support-color-3-shade3: #8cb366;
+  --support-color-3-shade4: #669933;
+  --support-color-3-shade5: #336600;
+  --support-color-3-shade6: #264d00;
+  --support-color-3-shade7: #1a3300;
+  --support-color-3-shade8: #0d1a00;
+
   /*! Fonts */
   --font-ubuntu-mono: "Ubuntu Mono", monospace;
   --font-montserrat: "Montserrat", sans-serif;
@@ -83,7 +93,6 @@
   --huge: 5rem;
   --extra-huge: 6rem;
 }
-
 img {
   max-width: 60px;
   -webkit-user-drag: none;
@@ -210,7 +219,9 @@ img {
   width: 50%;
   height: 10px;
   background-color: var(--text-color-shade1);
-  border-radius: 10px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
   overflow: hidden;
   margin-left: 3%;
   z-index: 12;
@@ -228,7 +239,8 @@ img {
   left: 0;
   height: 100%;
   background-color: var(--primary-color-shade4);
-  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   z-index: 12;
 }
 
@@ -254,21 +266,18 @@ img {
   display: inline-block;
   font-family: "Montserrat", sans-serif;
   z-index: 11;
-  margin-top: -1.5%;
+  margin-top: -1.6%;
   margin-left: 0%;
   font-style: italic;
   font-weight: bold;
-  color: var(--background-color-shade2);
-  background-color: var(--primary-color-shade4);
+  color: var(--background-color-shade8);
   width: fit-content;
   padding-right: 1%;
   padding-left: 0.4%;
-  padding-bottom: 0.55%;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 5px;
+  padding-bottom: 0%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 20px;
   text-align: left;
-  line-height: var(--mid-large);
 }
 
 .js .title,

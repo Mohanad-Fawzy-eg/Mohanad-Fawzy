@@ -1,183 +1,404 @@
 <div class="content">
   <div class="text">
-    <h1>These are some adittional technologies that I use</h1>
+    <h1>These are some adittional technologies that I am familiar with</h1>
     <div class="status-map">
-      <span>Currently using</span> <span class="deviders"> | </span>
+      <span>Learning</span><span class="deviders"> | </span>
       <span>Haven't used in a while</span><span class="deviders"> | </span>
-      <span>Learning</span>
+      <span>Currently using</span>
     </div>
     <div class="level-map">
-      <span>Basic</span><span class="deviders"> | </span>
+      <span>Beginner</span><span class="deviders"> | </span>
       <span>Intermidiate</span><span class="deviders"> | </span>
       <span>Advanced</span>
     </div>
   </div>
-  <div class="skills">
+  <div
+    class="skills"
+    [style.width]="
+      about.getsec5prop.animate ? 'calc(100% - (100% / 3) - 5rem)' : 0 + 'px'
+    "
+    [style.transition]="
+      about.getsec5prop.animate ? 'width 0.25s ease-in-out' : 'width 0s'
+    "
+    [style.transition-delay]="about.getsec5prop.animate ? ' 0.15s' : ' 0s'"
+  >
     <div class="blur-1" [style.opacity]="scroll > 0 ? 0.8 : 0"></div>
-    <div class="blur-2" [style.opacity]="scroll < 1400 ? 0.8 : 0"></div>
-    <button class="arrow-left" (click)="slide(1)" (dblclick)="slideToEnd(1)">
+    <div class="blur-2" [style.opacity]="scroll < 2300 ? 0.8 : 0"></div>
+    <button
+      class="arrow-left"
+      (click)="slide(1)"
+      [ngStyle]="{
+        transform: scroll == 2300 ? 'translateX(150%)' : 'translateX(0)',
+        opacity: scroll == 2300 ? 0 : 1,
+        transition: 'all 0.25s ease-in-out'
+      }"
+    >
       <i class="bx bx-chevron-right"></i>
     </button>
-    <button class="arrow-right" (click)="slide(-1)" (dblclick)="slideToEnd(-1)">
+    <button
+      class="arrow-right"
+      (click)="slide(-1)"
+      [ngStyle]="{
+        transform: scroll == 0 ? 'translateX(-150%)' : 'translateX(0)',
+        opacity: scroll == 0 ? 0 : 1,
+        transition: 'all 0.25s ease-in-out'
+      }"
+    >
       <i class="bx bx-chevron-left"></i>
     </button>
-    <div class="java" [style.margin-left]="-scroll + '%'">
-      <span>Java v21</span>
+    <div class="java card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="java.png" alt="" loading="lazy" />
+      <span>Java</span>
+      <img src="svgs/java.svg" alt="" loading="lazy" />
+      <div class="classif"><p>language</p></div>
+      <p>#2 programming language</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="py" [style.margin-left]="-scroll + '%'">
+    <div class="py card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="python.png" alt="" loading="lazy" />
+      <span>Python</span>
+      <img src="svgs/py.svg" alt="" loading="lazy" />
+      <div class="classif"><p>language</p></div>
+      <p>#3 programming language</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="cpp" [style.margin-left]="-scroll + '%'">
+    <div class="cpp card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="cpp.png" alt="" loading="lazy" />
+      <span>C++</span>
+      <img src="svgs/cpp.svg" alt="" loading="lazy" />
+      <div class="classif"><p>language</p></div>
+      <p>First language I learned</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="csh" [style.margin-left]="-scroll + '%'">
+    <div class="csh card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 0 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="csh.png" alt="" loading="lazy" />
+      <span>C#</span>
+      <img src="svgs/csh.svg" alt="" loading="lazy" />
+      <div class="classif"><p>language</p></div>
+      <p>Still prefere Java</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="dart" [style.margin-left]="-scroll + '%'">
+    <div class="dart card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="dart.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="ejs" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="ejs.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="hbs" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="hbs.png" alt="" loading="lazy" />
+      <span>Dart</span>
+      <img src="svgs/dart.svg" alt="" loading="lazy" />
+      <div class="classif"><p>language</p></div>
+      <p>JavaScript is better</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
 
-    <div class="git" [style.margin-left]="-scroll + '%'">
+    <div class="flutter card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="git.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="hub" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="github.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="gcp" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="gcp.png" alt="" loading="lazy" />
+      <span>Flutter</span>
+      <img src="svgs/flutter.svg" alt="" loading="lazy" />
+      <div class="classif"><p>mobile</p></div>
+      <p>Coolest frontend tool</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
 
-    <div class="react" [style.margin-left]="-scroll + '%'">
+    <div class="react card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
-        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="react.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="web" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="webpack.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="red" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="redis.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="gql" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="graphql.png" alt="" loading="lazy" />
-      <div class="status"></div>
-      <div class="level"></div>
-    </div>
-    <div class="tf" [style.margin-left]="-scroll + '%'">
-      <div
-        class="glass"
-        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
-      ></div>
-      <img src="tensorflow.png" alt="" loading="lazy" />
+      <span>React</span>
+      <img src="svgs/react.svg" alt="" loading="lazy" />
+      <div class="classif"><p>frontend</p></div>
+      <p>Crime against humanity</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
 
-    <div class="ue" [style.margin-left]="-scroll + '%'">
+    <div class="vue card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 400 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Vue.js</span>
+      <img src="svgs/vue.svg" alt="" loading="lazy" />
+      <div class="classif"><p>frontend</p></div>
+      <p>Best frontend tool</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="web card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Webpack</span>
+      <img src="svgs/web.svg" alt="" loading="lazy" />
+      <div class="classif"><p>bundler</p></div>
+      <p>The bundler that saves me</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="as card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Android Studio</span>
+      <img src="svgs/as.svg" alt="" loading="lazy" />
+      <div class="classif"><p>mobile</p></div>
+      <p>The BBQ IDE</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="boot card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Bootstrap</span>
+      <img src="svgs/boot.svg" alt="" loading="lazy" />
+      <div class="classif"><p>style</p></div>
+      <p>Shame on me</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="tw card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 800 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Tailwind</span>
+      <img src="svgs/tw.svg" alt="" loading="lazy" />
+      <div class="classif"><p>style</p></div>
+      <p>Less shame on me</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="next card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="ue4.png" alt="" loading="lazy" />
+      <span>Next.js</span>
+      <img src="svgs/next.svg" alt="" loading="lazy" />
+      <div class="classif"><p>full stack</p></div>
+      <p>My future wife</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
-    <div class="unity" [style.margin-left]="-scroll + '%'">
+
+    <div class="net card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>.NET</span>
+      <img src="svgs/net.svg" alt="" loading="lazy" />
+      <div class="classif"><p>full stack</p></div>
+      <p>It was a free course</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="exp card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Express.js</span>
+      <img src="svgs/exp.svg" alt="" loading="lazy" />
+      <div class="classif"><p>backend</p></div>
+      <p>For cool APIs</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="post card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1200 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Postman</span>
+      <img src="svgs/post.svg" alt="" loading="lazy" />
+      <div class="classif"><p>testing</p></div>
+      <p>My best friend</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="ejs card" [style.margin-left]="-scroll + '%'">
       <div
         class="glass"
         [style.backdrop-filter]="scroll == 1600 ? 'blur(0px)' : 'blur(5px)'"
       ></div>
-      <img src="unity.png" alt="" loading="lazy" />
+      <span>EJS</span>
+      <img src="svgs/ejs.svg" alt="" loading="lazy" />
+      <div class="classif"><p>templating</p></div>
+      <p>Better than hbs</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="hbs card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1600 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Handelbars</span>
+      <img src="svgs/hbs.svg" alt="" loading="lazy" />
+      <div class="classif"><p>templating</p></div>
+      <p>Worst then EJS</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="firebase card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1600 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Firebase</span>
+      <img src="svgs/firebase.svg" alt="" loading="lazy" />
+      <div class="classif"><p>BaaS</p></div>
+      <p>I am too poor to use it</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="red card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 1600 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Redis</span>
+      <img src="svgs/red.svg" alt="" loading="lazy" />
+      <div class="classif"><p>Database</p></div>
+      <p>Cool concept</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="git card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2000 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Git</span>
+      <img src="svgs/git.svg" alt="" loading="lazy" />
+      <div class="classif"><p>version control</p></div>
+      <p>PAIN</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="github card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2000 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>GitHub</span>
+      <img src="svgs/github.svg" alt="" loading="lazy" />
+      <div class="classif"><p>version control</p></div>
+      <P>Like, who doesn't use it</P>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="gcp card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2000 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Google Cloud</span>
+      <img src="svgs/gcp.svg" alt="" loading="lazy" />
+      <div class="classif"><p>cloud</p></div>
+      <p>Still too poor to use it</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="jl card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="
+          scroll == 2000 || scroll == 2300 ? 'blur(0px)' : 'blur(5px)'
+        "
+      ></div>
+      <span>Jupiter Lab</span>
+      <img src="svgs/jl.svg" alt="" loading="lazy" />
+      <div class="classif"><p>framework</p></div>
+      <p>Curse of free courses</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="tf card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2300 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Tensorflow</span>
+      <img src="svgs/tf.svg" alt="" loading="lazy" />
+      <div class="classif"><p>machine learning</p></div>
+      <p>Failed attempt</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="ue4 card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2300 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Unreal Engine</span>
+      <img src="svgs/ue4.svg" alt="" loading="lazy" />
+      <div class="classif"><p>game dev.</p></div>
+      <p>Failed attempt</p>
+      <div class="status"></div>
+      <div class="level"></div>
+    </div>
+
+    <div class="unity card" [style.margin-left]="-scroll + '%'">
+      <div
+        class="glass"
+        [style.backdrop-filter]="scroll == 2300 ? 'blur(0px)' : 'blur(5px)'"
+      ></div>
+      <span>Unity engine</span>
+      <img src="svgs/unity.svg" alt="" loading="lazy" />
+      <div class="classif"><p>game dev.</p></div>
+      <p>C# is an illness that needs to be cured</p>
       <div class="status"></div>
       <div class="level"></div>
     </div>
   </div>
-  <div class="bottom"><p>click</p></div>
+  <div class="bottom">
+    <p>
+      I redesigned this page over 13 times, please take your time to view it
+    </p>
+    <button>Isn't it too much?</button>
+  </div>
 </div>
