@@ -14,13 +14,9 @@
   </div>
   <div
     class="skills"
-    [style.width]="
-      about.getsec5prop.animate ? 'calc(100% - (100% / 3) - 5rem)' : 0 + 'px'
-    "
-    [style.transition]="
-      about.getsec5prop.animate ? 'width 0.25s ease-in-out' : 'width 0s'
-    "
-    [style.transition-delay]="about.getsec5prop.animate ? ' 0.15s' : ' 0s'"
+    [style.width]="prop?.animate ? 'calc(100% - (100% / 3) - 5rem)' : 0 + 'px'"
+    [style.transition]="prop?.animate ? 'width 0.25s ease-in-out' : 'width 0s'"
+    [style.transition-delay]="prop?.animate ? ' 0.15s' : ' 0s'"
   >
     <div class="blur-1" [style.opacity]="scroll > 0 ? 0.8 : 0"></div>
     <div class="blur-2" [style.opacity]="scroll < 2300 ? 0.8 : 0"></div>
@@ -399,6 +395,8 @@
     <p>
       I redesigned this page over 13 times, please take your time to view it
     </p>
-    <button>Isn't it too much?</button>
+    <button (click)="prop?.setScroll(prop?.height ?? 0)">
+      Isn't it too much?
+    </button>
   </div>
 </div>

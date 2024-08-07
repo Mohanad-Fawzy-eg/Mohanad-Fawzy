@@ -10,6 +10,9 @@ import { FullStackComponent } from '../full-stack/full-stack.component';
 import { FrontEndSkillsComponent } from '../front-end-skills/front-end-skills.component';
 import { BackEndSkillsComponent } from '../back-end-skills/back-end-skills.component';
 import { OtherSkillsComponent } from '../other-skills/other-skills.component';
+import { StackComponent } from '../stack/stack.component';
+import { ProjectStComponent } from '../project-st/project-st.component';
+import { ProjectNdComponent } from '../project-nd/project-nd.component';
 @Component({
   standalone: true,
   selector: 'app-about',
@@ -20,6 +23,9 @@ import { OtherSkillsComponent } from '../other-skills/other-skills.component';
     FrontEndSkillsComponent,
     BackEndSkillsComponent,
     OtherSkillsComponent,
+    StackComponent,
+    ProjectStComponent,
+    ProjectNdComponent,
   ],
 })
 export class AboutComponent {
@@ -27,6 +33,7 @@ export class AboutComponent {
 
   mainOpacity: number = 0;
   backgroundPosition: string = 'right';
+
   async ngOnInit(): Promise<void> {
     this.increaseOpacity(1, 0.1);
   }
@@ -45,98 +52,117 @@ export class AboutComponent {
 
   //? Offset variables;
 
-  private static sec1prop: prop = {
+  sec1prop: prop = {
     top: 0,
     height: 0,
     opacity: 1,
     animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
   };
 
-  private static sec2prop: prop = {
+  sec2prop: prop = {
     top: 0,
     height: 0,
     opacity: 1,
     animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
   };
 
-  private static sec3prop: prop = {
+  sec3prop: prop = {
     top: 0,
     height: 0,
     opacity: 1,
     animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
   };
 
-  private static sec4prop: prop = {
+  sec4prop: prop = {
     top: 0,
     height: 0,
     opacity: 1,
     animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
   };
 
-  private static sec5prop: prop = {
+  sec5prop: prop = {
     top: 0,
     height: 0,
     opacity: 1,
     animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
   };
 
-  public get getsec1prop(): prop {
-    return AboutComponent.sec1prop;
-  }
+  sec6prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
+  };
 
-  public set setsec1prop(prop: prop) {
-    AboutComponent.sec1prop = prop;
-  }
-  public get getsec2prop(): prop {
-    return AboutComponent.sec2prop;
-  }
+  sec7prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
+  };
 
-  public set setsec2prop(prop: prop) {
-    AboutComponent.sec2prop = prop;
-  }
-  public get getsec3prop(): prop {
-    return AboutComponent.sec3prop;
-  }
-
-  public set setsec3prop(prop: prop) {
-    AboutComponent.sec3prop = prop;
-  }
-
-  public get getsec4prop(): prop {
-    return AboutComponent.sec4prop;
-  }
-
-  public set setsec4prop(prop: prop) {
-    AboutComponent.sec4prop = prop;
-  }
-
-  public get getsec5prop(): prop {
-    return AboutComponent.sec5prop;
-  }
-
-  public set setsec5prop(prop: prop) {
-    AboutComponent.sec5prop = prop;
-  }
+  sec8prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: function (position: number): void {
+      window.scrollTo({ top: position, behavior: 'smooth' });
+    },
+  };
 
   async ngAfterViewInit(): Promise<void> {
-    AboutComponent.sec1prop.top = this.sec1?.nativeElement.offsetTop;
-    AboutComponent.sec1prop.height = this.sec1?.nativeElement.offsetHeight;
-    AboutComponent.sec2prop.top = this.sec2?.nativeElement.offsetTop;
-    AboutComponent.sec2prop.height =
+    this.sec1prop.top = this.sec1?.nativeElement.offsetTop;
+    this.sec1prop.height = this.sec1?.nativeElement.offsetHeight;
+    this.sec2prop.top = this.sec2?.nativeElement.offsetTop;
+    this.sec2prop.height =
       this.sec2?.nativeElement.offsetHeight +
       this.sec2?.nativeElement.offsetTop;
-    AboutComponent.sec3prop.top = this.sec3?.nativeElement.offsetTop;
-    AboutComponent.sec3prop.height =
+    this.sec3prop.top = this.sec3?.nativeElement.offsetTop;
+    this.sec3prop.height =
       this.sec3?.nativeElement.offsetHeight +
       this.sec3?.nativeElement.offsetTop;
-    AboutComponent.sec4prop.top = this.sec4?.nativeElement.offsetTop;
-    AboutComponent.sec4prop.height =
+    this.sec4prop.top = this.sec4?.nativeElement.offsetTop;
+    this.sec4prop.height =
       this.sec4?.nativeElement.offsetHeight +
       this.sec4?.nativeElement.offsetTop;
-    AboutComponent.sec5prop.top = this.sec5?.nativeElement.offsetTop;
-    AboutComponent.sec5prop.height =
+    this.sec5prop.top = this.sec5?.nativeElement.offsetTop;
+    this.sec5prop.height =
       this.sec5?.nativeElement.offsetHeight +
       this.sec5?.nativeElement.offsetTop;
+    this.sec6prop.top = this.sec6?.nativeElement.offsetTop;
+    this.sec6prop.height =
+      this.sec6?.nativeElement.offsetHeight +
+      this.sec6?.nativeElement.offsetTop;
+    this.sec7prop.top = this.sec7?.nativeElement.offsetTop;
+    this.sec7prop.height =
+      this.sec7?.nativeElement.offsetHeight +
+      this.sec7?.nativeElement.offsetTop;
+    this.sec8prop.top = this.sec8?.nativeElement.offsetTop;
+    this.sec8prop.height =
+      this.sec8?.nativeElement.offsetHeight +
+      this.sec8?.nativeElement.offsetTop;
     this.ch.detectChanges();
   }
 
@@ -144,11 +170,14 @@ export class AboutComponent {
 
   position: number = 0;
 
-  @ViewChild('first') sec1: ElementRef | undefined;
-  @ViewChild('second') sec2: ElementRef | undefined;
-  @ViewChild('third') sec3: ElementRef | undefined;
-  @ViewChild('fourth') sec4: ElementRef | undefined;
-  @ViewChild('fifth') sec5: ElementRef | undefined;
+  @ViewChild('sec1') sec1: ElementRef | undefined;
+  @ViewChild('sec2') sec2: ElementRef | undefined;
+  @ViewChild('sec3') sec3: ElementRef | undefined;
+  @ViewChild('sec4') sec4: ElementRef | undefined;
+  @ViewChild('sec5') sec5: ElementRef | undefined;
+  @ViewChild('sec6') sec6: ElementRef | undefined;
+  @ViewChild('sec7') sec7: ElementRef | undefined;
+  @ViewChild('sec8') sec8: ElementRef | undefined;
 
   animateFirst: boolean = false;
 
@@ -156,46 +185,57 @@ export class AboutComponent {
   @HostListener('window:scroll', ['$event'])
   async onScroll(event: any) {
     this.position = window.scrollY;
-    this.topArrowOpacity = this.position / AboutComponent.sec1prop.height;
-    if (this.getsec1prop.opacity > 0 || this.position < this.getsec2prop.top) {
-      AboutComponent.sec1prop.opacity = Math.abs(
-        1 - this.position / AboutComponent.sec1prop.height
+
+    this.topArrowOpacity = this.position / this.sec1prop.height;
+    if (this.sec1prop.opacity > 0 || this.position < this.sec2prop.top) {
+      this.sec1prop.opacity = Math.abs(
+        1 - this.position / this.sec1prop.height
       );
     }
 
-    AboutComponent.sec2prop.animate =
-      this.position > AboutComponent.sec2prop.top * 0.6;
-    AboutComponent.sec3prop.animate =
-      this.position > AboutComponent.sec3prop.top * 0.6;
-    AboutComponent.sec4prop.animate =
-      this.position > AboutComponent.sec4prop.top * 0.8;
-
-    AboutComponent.sec5prop.animate =
-      this.position > AboutComponent.sec5prop.top * 0.8;
+    this.sec2prop.animate = this.position > this.sec2prop.top * 0.6;
+    this.sec3prop.animate = this.position > this.sec3prop.top * 0.6;
+    this.sec4prop.animate = this.position > this.sec4prop.top * 0.8;
+    this.sec5prop.animate = this.position > this.sec5prop.top * 0.8;
+    this.sec6prop.animate = this.position > this.sec6prop.top * 0.8;
+    this.sec7prop.animate = this.position > this.sec7prop.top * 0.8;
+    this.sec8prop.animate = this.position > this.sec8prop.top * 0.8;
   }
 
   //^ Resize window;
 
   @HostListener('window:resize', ['$event'])
   async onResize() {
-    AboutComponent.sec1prop.top = this.sec1?.nativeElement.offsetTop;
-    AboutComponent.sec1prop.height = this.sec1?.nativeElement.offsetHeight;
-    AboutComponent.sec2prop.top = this.sec2?.nativeElement.offsetTop;
-    AboutComponent.sec2prop.height =
+    this.sec1prop.top = this.sec1?.nativeElement.offsetTop;
+    this.sec1prop.height = this.sec1?.nativeElement.offsetHeight;
+    this.sec2prop.top = this.sec2?.nativeElement.offsetTop;
+    this.sec2prop.height =
       this.sec2?.nativeElement.offsetHeight +
       this.sec2?.nativeElement.offsetTop;
-    AboutComponent.sec3prop.top = this.sec3?.nativeElement.offsetTop;
-    AboutComponent.sec3prop.height =
+    this.sec3prop.top = this.sec3?.nativeElement.offsetTop;
+    this.sec3prop.height =
       this.sec3?.nativeElement.offsetHeight +
       this.sec3?.nativeElement.offsetTop;
-    AboutComponent.sec4prop.top = this.sec4?.nativeElement.offsetTop;
-    AboutComponent.sec4prop.height =
+    this.sec4prop.top = this.sec4?.nativeElement.offsetTop;
+    this.sec4prop.height =
       this.sec4?.nativeElement.offsetHeight +
       this.sec4?.nativeElement.offsetTop;
-    AboutComponent.sec5prop.top = this.sec5?.nativeElement.offsetTop;
-    AboutComponent.sec5prop.height =
+    this.sec5prop.top = this.sec5?.nativeElement.offsetTop;
+    this.sec5prop.height =
       this.sec5?.nativeElement.offsetHeight +
       this.sec5?.nativeElement.offsetTop;
+    this.sec6prop.top = this.sec6?.nativeElement.offsetTop;
+    this.sec6prop.height =
+      this.sec6?.nativeElement.offsetHeight +
+      this.sec6?.nativeElement.offsetTop;
+    this.sec7prop.top = this.sec7?.nativeElement.offsetTop;
+    this.sec7prop.height =
+      this.sec7?.nativeElement.offsetHeight +
+      this.sec7?.nativeElement.offsetTop;
+    this.sec8prop.top = this.sec8?.nativeElement.offsetTop;
+    this.sec8prop.height =
+      this.sec8?.nativeElement.offsetHeight +
+      this.sec8?.nativeElement.offsetTop;
   }
 
   //& Top arrow calc;
@@ -219,4 +259,5 @@ export interface prop {
   height: number;
   opacity: number;
   animate: boolean;
+  setScroll: (position: number) => void;
 }

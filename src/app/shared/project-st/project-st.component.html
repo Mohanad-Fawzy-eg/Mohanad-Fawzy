@@ -1,0 +1,60 @@
+<img
+  class="img3"
+  [src]="!hide ? '' : 'Mockups/' + currentImg"
+  alt=""
+  [ngStyle]="{ opacity: hide ? '1' : '0' }"
+  loading="lazy"
+/>
+
+<div
+  class="black"
+  [ngStyle]="{ opacity: hide ? '0.8' : '0' }"
+  [style.pointer-events]="hide ? 'auto' : 'none'"
+  (click)="showOrHide(false, '')"
+></div>
+<div class="content" style="overflow-y: hidden !important">
+  <div class="top">
+    <h1>Coursato</h1>
+    <h2>Mobile Application</h2>
+  </div>
+  <div class="ex">
+    <div class="imgs">
+      <img
+        src="Mockups/comu02.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'comu02.svg')"
+      />
+      <img
+        src="Mockups/comu03.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'comu03.svg')"
+      />
+      <img
+        src="Mockups/comu04.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'comu04.svg')"
+      />
+    </div>
+    <div class="text">
+      <p>
+        This was a demo app for courses, It consists of a ui designed with
+        flutter and a simple API to regester
+        <i>"My labtop melted 3 times when developing this app"</i>
+      </p>
+    </div>
+    <div class="stack">
+      <h3>Tech used</h3>
+      <div class="imgs2">
+        <img src="svgs/flutter.svg" alt="" loading="lazy" />
+        <img src="svgs/firebase.svg" alt="" loading="lazy" />
+        <img src="svgs/as.svg" alt="" loading="lazy" />
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <button (click)="prop.setScroll(prop.height)">Next</button>
+  </div>
+</div>

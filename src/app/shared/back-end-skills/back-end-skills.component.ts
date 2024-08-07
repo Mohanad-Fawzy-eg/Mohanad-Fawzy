@@ -1,6 +1,5 @@
-import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
-import { AboutComponent } from '../about/about.component';
+import { Component, HostListener, Input } from '@angular/core';
+import { prop } from '../about/about.component';
 
 @Component({
   standalone: true,
@@ -9,8 +8,7 @@ import { AboutComponent } from '../about/about.component';
   styleUrl: './back-end-skills.component.css',
 })
 export class BackEndSkillsComponent {
-  constructor(private ch: ChangeDetectorRef, private router: Router) {}
-  about = new AboutComponent(this.ch, this.router);
+  @Input() prop?: prop;
 
   node: number = 0;
   exp: number = 0;
@@ -18,9 +16,9 @@ export class BackEndSkillsComponent {
 
   @HostListener('window:scroll', ['$event'])
   async onScroll(event: any) {
-    if (this.about.getsec4prop.animate && this.node == 0) {
+    if (this.prop?.animate && this.node == 0) {
       this.fillBar(1);
-    } else if (!this.about.getsec4prop.animate && this.node == 90) {
+    } else if (!this.prop?.animate && this.node == 90) {
       this.emptyBar();
     }
   }

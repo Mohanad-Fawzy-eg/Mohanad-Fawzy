@@ -1,0 +1,62 @@
+<img
+  class="img3"
+  [src]="!hide ? '' : 'Mockups/' + currentImg"
+  alt=""
+  [ngStyle]="{ opacity: hide ? '1' : '0' }"
+  loading="lazy"
+/>
+
+<div
+  class="black"
+  [ngStyle]="{ opacity: hide ? '0.8' : '0' }"
+  [style.pointer-events]="hide ? 'auto' : 'none'"
+  (click)="showOrHide(false, '')"
+></div>
+<div class="content" style="overflow-y: hidden !important">
+  <div class="top">
+    <h1>Bee org</h1>
+    <h2>CRUD application</h2>
+  </div>
+  <div class="ex">
+    <div class="imgs">
+      <img
+        src="Mockups/ID03.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'ID03.svg')"
+      />
+      <img
+        src="Mockups/mu01.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'mu01.svg')"
+      />
+      <img
+        src="Mockups/mu02.svg"
+        alt=""
+        loading="lazy"
+        (click)="showOrHide(true, 'mu02.svg')"
+      />
+    </div>
+    <div class="text">
+      <p>
+        This demo app was made to facilitate and record the students' grades
+        monitored by HR department and store each student's data. The API itself
+        consists of over 3000 lines of codes <i>"Yes my back still hurt"</i> ,
+        but It was a fun experience and I am currently working on recreating it
+        from scratch <i>"I hate myself"</i>
+      </p>
+    </div>
+    <div class="stack">
+      <h3>Tech used</h3>
+      <div class="imgs2">
+        <img src="svgs/ng.svg" alt="" loading="lazy" />
+        <img src="svgs/boot.svg" alt="" loading="lazy" />
+        <img src="svgs/node.svg" alt="" loading="lazy" />
+        <img src="svgs/exp.svg" alt="" loading="lazy" />
+        <img src="svgs/mongo.svg" alt="" loading="lazy" />
+      </div>
+    </div>
+  </div>
+  <div class="bottom"><button>Next</button></div>
+</div>

@@ -11,6 +11,9 @@ import { FullStackComponent } from './full-stack/full-stack.component';
 import { FrontEndSkillsComponent } from './front-end-skills/front-end-skills.component';
 import { BackEndSkillsComponent } from './back-end-skills/back-end-skills.component';
 import { OtherSkillsComponent } from './other-skills/other-skills.component';
+import { StackComponent } from './stack/stack.component';
+import { ProjectStComponent } from './project-st/project-st.component';
+import { ProjectNdComponent } from './project-nd/project-nd.component';
 
 @NgModule({
   imports: [
@@ -36,6 +39,11 @@ import { OtherSkillsComponent } from './other-skills/other-skills.component';
     FrontEndSkillsComponent,
     BackEndSkillsComponent,
     OtherSkillsComponent,
+  ],
+  declarations: [
+    StackComponent,
+    ProjectStComponent,
+    ProjectNdComponent
   ],
 })
 export class SharedModule {}

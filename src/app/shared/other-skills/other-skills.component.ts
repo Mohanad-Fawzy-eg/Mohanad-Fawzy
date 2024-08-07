@@ -1,6 +1,5 @@
-import { ChangeDetectorRef, Component, HostListener } from '@angular/core';
-import { AboutComponent } from '../about/about.component';
-import { Router } from '@angular/router';
+import { Component, HostListener, Input } from '@angular/core';
+import { prop } from '../about/about.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,17 +10,16 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
 })
 export class OtherSkillsComponent {
-  constructor(private ch: ChangeDetectorRef, private router: Router) {}
+  @Input() prop?: prop;
+
   scroll = 2400;
   slideable: boolean = true;
 
-  about = new AboutComponent(this.ch, this.router);
-
   @HostListener('window:scroll', ['$event'])
   onScroll(event: any) {
-    if (this.about.getsec5prop.animate && this.scroll == 2400) {
+    if (this.prop?.animate && this.scroll == 2400) {
       this.scroll = 0;
-    } else if (!this.about.getsec5prop.animate && this.scroll != 2400) {
+    } else if (!this.prop?.animate && this.scroll != 2400) {
       this.scroll = 2400;
     }
   }
