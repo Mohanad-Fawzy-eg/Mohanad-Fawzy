@@ -13,6 +13,7 @@ import { OtherSkillsComponent } from '../other-skills/other-skills.component';
 import { StackComponent } from '../stack/stack.component';
 import { ProjectStComponent } from '../project-st/project-st.component';
 import { ProjectNdComponent } from '../project-nd/project-nd.component';
+import { NavbtnComponent } from '../navbtn/navbtn.component';
 @Component({
   standalone: true,
   selector: 'app-about',
@@ -26,6 +27,7 @@ import { ProjectNdComponent } from '../project-nd/project-nd.component';
     StackComponent,
     ProjectStComponent,
     ProjectNdComponent,
+    NavbtnComponent,
   ],
 })
 export class AboutComponent {

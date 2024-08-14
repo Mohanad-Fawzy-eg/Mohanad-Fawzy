@@ -1,14 +1,16 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { prop } from '../about/about.component';
+import { NavbtnComponent } from '../navbtn/navbtn.component';
 
 @Component({
   standalone: true,
   selector: 'app-back-end-skills',
   templateUrl: './back-end-skills.component.html',
   styleUrl: './back-end-skills.component.css',
+  imports: [NavbtnComponent],
 })
 export class BackEndSkillsComponent {
-  @Input() prop?: prop;
+  @Input() prop!: prop;
 
   node: number = 0;
   exp: number = 0;

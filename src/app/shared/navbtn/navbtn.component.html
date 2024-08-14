@@ -1,0 +1,9 @@
+<button
+  (click)="scroll()"
+  [style.color]="tempC"
+  [style.backgroundColor]="tempbgC"
+  (mouseover)="tempbgC = color; tempC = bgColor"
+  (mouseleave)="tempC = color; tempbgC = bgColor"
+>
+  {{ text }}
+</button>

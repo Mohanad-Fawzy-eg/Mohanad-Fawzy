@@ -124,6 +124,8 @@ img {
 .text {
   grid-area: 1 / 1 / 2 / 2;
   text-align: center !important;
+  padding-top: 5%;
+  margin: 0 auto;
 }
 
 .skills {
@@ -219,12 +221,31 @@ img {
   width: 50%;
   height: 10px;
   background-color: var(--text-color-shade1);
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  border-bottom-left-radius: 50px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
   overflow: hidden;
   margin-left: 3%;
+  margin-top: 0%;
   z-index: 12;
+  -webkit-box-shadow: -5px 5px 10px 1px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -5px 5px 10px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: -5px 5px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.js .progress::before,
+.angular .progress::before,
+.ts .progress::before,
+.html .progress::before,
+.css .progress::before,
+.jquery .progress::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  margin-top: -0.17%;
+  margin-left: -0.15%;
+  position: absolute;
+  border-radius: 100%;
+  z-index: 15;
 }
 
 .js .per,
@@ -239,8 +260,8 @@ img {
   left: 0;
   height: 100%;
   background-color: var(--primary-color-shade4);
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
   z-index: 12;
 }
 
@@ -252,110 +273,254 @@ img {
 .jquery p {
   text-align: left !important;
   position: absolute;
-  text-wrap: nowrap;
-  margin-top: 3%;
   font-style: italic;
   font-family: var(--font-rubik);
   font-weight: bold;
   color: var(--primary-color-shade7);
   opacity: 1;
+  margin-top: 0%;
 }
 
 .title {
   position: absolute;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  text-align: center;
   font-family: "Montserrat", sans-serif;
   z-index: 11;
-  margin-top: -1.6%;
+  margin-top: -1.5%;
   margin-left: 0%;
   font-style: italic;
   font-weight: bold;
   color: var(--background-color-shade8);
   width: fit-content;
-  padding-right: 1%;
-  padding-left: 0.4%;
-  padding-bottom: 0%;
-  border-top-right-radius: 50px;
-  border-top-left-radius: 20px;
-  text-align: left;
+  height: fit-content;
+  border-bottom-right-radius: 50px;
 }
 
-.js .title,
+.js .title {
+  color: var(--text-color-shade8);
+}
 .js .per {
   background-color: #f0db4f;
   color: var(--text-color-shade8);
 }
-.ts .title,
+
+.js .progress::before {
+  background-color: #f0db4f;
+}
+.ts .title {
+  color: #3178c6;
+}
 .ts .per {
   background-color: #3178c6;
-  color: var(--background-color-shade1);
 }
 
-.angular .title,
+.ts .progress::before {
+  background-color: #3178c6;
+}
+
+.angular .title {
+  color: #c3002f;
+}
 .angular .per {
   background-color: #c3002f;
-  color: var(--background-color-shade1);
 }
 
-.jquery .title,
+.angular .progress::before {
+  background-color: #c3002f;
+}
+
+.jquery .title {
+  color: #0868ac;
+}
 .jquery .per {
   background-color: #0868ac;
-  color: var(--background-color-shade1);
 }
 
-.html .title,
+.jquery .progress::before {
+  background-color: #0868ac;
+}
+
+.html .title {
+  color: #e44d26;
+}
 .html .per {
   background-color: #e44d26;
-  color: var(--background-color-shade1);
 }
 
-.css .title,
+.html .progress::before {
+  background-color: #e44d26;
+}
+
+.css .title {
+  color: #1572b6;
+}
 .css .per {
   background-color: #1572b6;
-  color: var(--background-color-shade1);
 }
 
-.js p,
-.ts p {
-  margin-left: 2.5%;
+.css .progress::before {
+  background-color: #1572b6;
 }
 
-.angular p {
-  margin-left: -1%;
+@media screen and (max-width: 426px) {
+  .text h1 {
+    font-size: 3rem;
+    padding: 0;
+  }
+
+  .text span {
+    font-size: 1rem;
+    line-height: 10px;
+    padding: 0;
+  }
+
+  img {
+    max-width: 40px;
+    max-height: 40px;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .js {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .ts {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .html {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .css {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .angular {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+  .jquery {
+    grid-area: 6 / 1 / 7 / 2;
+  }
+
+  .js,
+  .ts,
+  .html,
+  .css,
+  .angular,
+  .jquery {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+    padding-left: 5%;
+    padding-top: 5%;
+    width: 100%;
+    height: fit-content !important;
+  }
+
+  .js .progress,
+  .ts .progress,
+  .angular .progress,
+  .jquery .progress,
+  .html .progress,
+  .css .progress {
+    width: calc(100% - 13% - 30px);
+    border-radius: 100px;
+  }
+
+  .js .progress::before,
+  .angular .progress::before,
+  .ts .progress::before,
+  .html .progress::before,
+  .css .progress::before,
+  .jquery .progress::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-top: -0.6%;
+    margin-left: -0.15%;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 15;
+  }
+
+  .progress .title {
+    margin-top: -5%;
+    font-size: 0.75rem;
+    border-radius: 100px;
+    text-align: center;
+  }
+
+  .progress .per {
+    border-radius: 100px;
+  }
+
+  .skills p {
+    margin-top: 0%;
+    font-size: 0.8rem;
+    text-wrap: wrap;
+    width: 75%;
+  }
+
+  .bottom a {
+    font-size: 1rem;
+  }
 }
 
-.css p {
-  margin-left: -7%;
+@media screen and (max-width: 321px) {
+  .title {
+    margin-top: -6% !important;
+  }
 }
 
-.html p {
-  margin-left: -4%;
-}
+@media screen and (max-width: 1025px) {
+  img {
+    max-width: 50px;
+    max-height: 50px;
+  }
 
-.jquery p {
-  margin-left: -9%;
-}
+  .js .progress,
+  .ts .progress,
+  .angular .progress,
+  .jquery .progress,
+  .html .progress,
+  .css .progress {
+    width: calc(100% - 13% - 30px);
+  }
 
-.bottom a {
-  text-wrap: nowrap;
-  text-decoration: none;
-  color: var(--background-color-shade1);
-  font-family: var(--font-cubano);
-  font-size: 1.4rem;
-  background-color: var(--primary-color-main);
-  border-radius: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  transition: all 0.2s ease-in-out;
-}
-
-.bottom a:hover {
-  background-color: var(--primary-color-shade5);
-  cursor: pointer;
-}
-
-.bottom:active {
-  transform: scale(0.9);
+  .title {
+    margin-top: -3%;
+  }
+  .js .progress::before,
+  .angular .progress::before,
+  .ts .progress::before,
+  .html .progress::before,
+  .css .progress::before,
+  .jquery .progress::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    margin-top: -0.31%;
+    margin-left: -0.25%;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 15;
+  }
 }

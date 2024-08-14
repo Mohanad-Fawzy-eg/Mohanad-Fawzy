@@ -10,17 +10,16 @@
       <div class="progress">
         <span class="title">JavaScript</span>
         <div class="per" [style.width]="js + '%'"></div>
+        <p>My #1 programming language.</p>
       </div>
-
-      <p>This is my main programming language</p>
     </div>
     <div class="ts">
       <img src="svgs/ts.svg" alt="" />
       <div class="progress">
         <span class="title">TypeScript</span>
         <div class="per" [style.width]="ts + '%'"></div>
+        <p>Ofcourse I use TypeScript.</p>
       </div>
-      <p>Ofcourse I use TypeScript, it is awsome</p>
     </div>
 
     <div class="angular">
@@ -28,16 +27,16 @@
       <div class="progress">
         <span class="title">Angular</span>
         <div class="per" [style.width]="ng + '%'"></div>
+        <p>This app was made with Angular.</p>
       </div>
-      <p>This app was made with Angular</p>
     </div>
     <div class="jquery">
       <img src="svgs/jq.svg" alt="" />
       <div class="progress">
         <span class="title">jQuery</span>
         <div class="per" [style.width]="jq + '%'"></div>
+        <p>Still perfer Angular.</p>
       </div>
-      <p>Still perfer Angular</p>
     </div>
 
     <div class="html">
@@ -45,20 +44,25 @@
       <div class="progress">
         <span class="title">HTML 5</span>
         <div class="per" [style.width]="ht + '%'"></div>
+        <p>Like, it does not even count.</p>
       </div>
-      <p>Like, it does not even count</p>
     </div>
     <div class="css">
       <img src="svgs/css.svg" alt="" />
       <div class="progress">
-        <span class="title">CSS 3</span>
+        <span class="title"> CSS 3 </span>
         <div class="per" [style.width]="cs + '%'"></div>
+        <p>99.9% of me hates CSS!</p>
       </div>
-      <p>99.9% of me hates CSS</p>
     </div>
   </div>
 
   <div class="bottom">
-    <a (click)="prop?.setScroll(prop?.height ?? 0)">What else?</a>
+    <app-navbtn
+      [color]="'#33322c'"
+      [bgColor]="'#fff9e3'"
+      [text]="'What else?'"
+      [route]="prop.height"
+    ></app-navbtn>
   </div>
 </div>

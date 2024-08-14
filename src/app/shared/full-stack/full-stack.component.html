@@ -1,6 +1,7 @@
 <div [className]="className" #content>
   <div class="text">
-    <h1>I am a full-stack developer</h1>
+    <h1>I am a</h1>
+    <h1 class="hidden">full stack developer</h1>
 
     <span>I have 2 years of experience in web development</span>
 
@@ -9,6 +10,11 @@
     >
   </div>
   <div class="bottom">
-    <a (click)="prop?.setScroll(prop?.height ?? 0)">What skills ?</a>
+    <app-navbtn
+      [color]="'#33322c'"
+      [bgColor]="'#fffcf1'"
+      [route]="prop.height"
+      [text]="'What skills?'"
+    ></app-navbtn>
   </div>
 </div>

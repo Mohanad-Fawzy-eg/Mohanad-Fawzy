@@ -1,14 +1,16 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { prop } from '../about/about.component';
+import { NavbtnComponent } from '../navbtn/navbtn.component';
 
 @Component({
   standalone: true,
   selector: 'app-front-end-skills',
   templateUrl: './front-end-skills.component.html',
   styleUrl: './front-end-skills.component.css',
+  imports: [NavbtnComponent],
 })
 export class FrontEndSkillsComponent {
-  @Input() prop?: prop;
+  @Input() prop!: prop;
 
   js: number = 0;
   ts: number = 0;
@@ -45,5 +47,9 @@ export class FrontEndSkillsComponent {
     this.ng = 0;
     this.ht = 0;
     this.cs = 0;
+  }
+
+  coolWidth(max: number, value: number): number {
+    return 100 - (max - value);
   }
 }

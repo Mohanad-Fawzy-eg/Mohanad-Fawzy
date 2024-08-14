@@ -14,6 +14,7 @@ import { OtherSkillsComponent } from './other-skills/other-skills.component';
 import { StackComponent } from './stack/stack.component';
 import { ProjectStComponent } from './project-st/project-st.component';
 import { ProjectNdComponent } from './project-nd/project-nd.component';
+import { NavbtnComponent } from './navbtn/navbtn.component';
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { ProjectNdComponent } from './project-nd/project-nd.component';
   declarations: [
     StackComponent,
     ProjectStComponent,
-    ProjectNdComponent
+    ProjectNdComponent,
+    NavbtnComponent
   ],
 })
 export class SharedModule {}
