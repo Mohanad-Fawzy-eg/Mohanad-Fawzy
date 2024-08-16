@@ -1,6 +1,6 @@
 <img
   class="img3"
-  [src]="!hide ? '' : 'Mockups/' + currentImg"
+  [src]="!hide ? '' : 'Mockups/' + currentImg + '.svg'"
   alt=""
   [ngStyle]="{ opacity: hide ? '1' : '0' }"
   loading="lazy"
@@ -14,47 +14,42 @@
 ></div>
 <div class="content" style="overflow-y: hidden !important">
   <div class="top">
-    <h1>Coursato</h1>
-    <h2>Mobile Application</h2>
+    <h1>{{ title }}</h1>
+    <h2>{{ type }}</h2>
   </div>
   <div class="ex">
     <div class="imgs">
       <img
-        src="Mockups/comu02.svg"
+        *ngFor="let i of img"
+        src="Mockups/{{ i }}.svg"
         alt=""
         loading="lazy"
-        (click)="showOrHide(true, 'comu02.svg')"
-      />
-      <img
-        src="Mockups/comu03.svg"
-        alt=""
-        loading="lazy"
-        (click)="showOrHide(true, 'comu03.svg')"
-      />
-      <img
-        src="Mockups/comu04.svg"
-        alt=""
-        loading="lazy"
-        (click)="showOrHide(true, 'comu04.svg')"
+        (click)="showOrHide(true, i)"
       />
     </div>
     <div class="text">
-      <p>
-        This was a demo app for courses, It consists of a ui designed with
-        flutter and a simple API to regester
-        <i>"My labtop melted 3 times when developing this app"</i>
-      </p>
+      <p>{{ desc }}</p>
     </div>
     <div class="stack">
       <h3>Tech used</h3>
       <div class="imgs2">
-        <img src="svgs/flutter.svg" alt="" loading="lazy" />
-        <img src="svgs/firebase.svg" alt="" loading="lazy" />
-        <img src="svgs/as.svg" alt="" loading="lazy" />
+        <app-card
+          *ngFor="let item of techStack"
+          [title]="item.title"
+          [img]="item.img"
+          [per]="item.per"
+          [animate]="prop.animate"
+          [delay]="item.delay"
+        ></app-card>
       </div>
     </div>
   </div>
   <div class="bottom">
-    <button (click)="prop.setScroll(prop.height)">Next</button>
+    <app-navbtn
+      [text]="actionTitle"
+      [color]="'#33322c'"
+      [bgColor]="'#fff8dc'"
+      [route]="prop.height"
+    ></app-navbtn>
   </div>
 </div>

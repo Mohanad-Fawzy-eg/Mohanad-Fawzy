@@ -193,3 +193,132 @@ h6 {
 .bottom button:active {
   transform: scale(0.9);
 }
+
+/*^ Media queries */
+@media screen and (max-width: 321px) {
+  .content {
+    gap: 1rem !important;
+  }
+  .current,
+  .future,
+  .bottom {
+    width: 100vw !important;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .current h1 {
+    font-size: 1.5rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+  .content h2 {
+    font-size: 1rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  .future h1 {
+    font-size: 1.25rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+}
+
+@media screen and (max-width: 400px) and (min-width: 322px) {
+  .content {
+    gap: 1.25rem !important;
+  }
+  .current,
+  .future,
+  .bottom {
+    width: 100vw !important;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .current h1 {
+    font-size: 1.75rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+  .content h2 {
+    font-size: 1.25rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  .future h1 {
+    font-size: 1.5rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+}
+
+@media screen and (max-width: 426px) and (min-width: 401px) {
+  .content {
+    gap: 1.5rem !important;
+  }
+  .current,
+  .future,
+  .bottom {
+    width: 100vw !important;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .current h1 {
+    font-size: 2rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+  .content h2 {
+    font-size: 1.25rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  .future h1 {
+    font-size: 2rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+  .content {
+    gap: 1.5rem !important;
+  }
+  .current,
+  .future,
+  .bottom {
+    width: 100vw !important;
+  }
+  .stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  .current h1 {
+    font-size: 3rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+  .content h2 {
+    font-size: 2rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+
+  .future h1 {
+    font-size: 3rem !important;
+    line-height: normal !important;
+    text-wrap: wrap !important;
+  }
+}

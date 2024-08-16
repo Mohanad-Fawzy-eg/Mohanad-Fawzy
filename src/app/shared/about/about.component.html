@@ -87,7 +87,7 @@
     ></app-other-skills>
   </div>
 
-  <!-- <div class="content" id="sixth" #sec6>
+  <div class="content" id="sixth" #sec6>
     <app-stack
       [prop]="sec6prop"
       style="
@@ -103,7 +103,36 @@
 
   <div class="content" id="seventh" #sec7>
     <app-project-st
+      [title]="'Coursato'"
+      [type]="'Mobile Application'"
+      [desc]="
+        '      This was a demo app for courses, It consists of a ui designed with
+      flutter and a simple API to regester,
+      My labtop melted 3 times when developing this app'
+      "
       [prop]="sec7prop"
+      [actionTitle]="'Next'"
+      [img]="['comu02', 'comu03', 'comu04']"
+      [techStack]=" [
+      {
+        title: 'Flutter',
+        img: 'flutter',
+        per: 30,
+        delay: 0.125,
+      },
+      {
+        title: 'Dart',
+        img: 'dart',
+        per: 51,
+        delay: 0.25,
+      },
+      {
+        title: 'Firebase',
+        img: 'firebase',
+        per: 30,
+        delay: 0.375,
+      },
+    ]"
       style="
         width: 100vw;
         height: 100vh;
@@ -116,8 +145,46 @@
   </div>
 
   <div class="content" id="eighth" #sec8>
-    <app-project-nd
-      [prob]=""
+    <app-project-st
+      [title]="'Bee Org'"
+      [type]="'CRUD Application'"
+      [desc]="
+        'This demo app was made to facilitate and record the students grades
+      monitored by HR department and store each students data.'
+      "
+      [prop]="sec8prop"
+      [actionTitle]="'Awsome'"
+      [img]="['ID03', 'mu01', 'mu02']"
+      [techStack]="[{
+        title: 'Angular',
+        img: 'ng',
+        per: 76,
+        delay: 0.125,
+      } , {
+        title: 'TypeScript',
+        img: 'ts',
+        per: 80,
+        delay: 0.25,
+      } ,
+      {
+        title: 'Node.js',
+        img: 'node',
+        per: 80,
+        delay: 0.375,
+      },
+      {
+        title: 'Express.js',
+        img: 'exp',
+        per: 80,
+        delay: 0.5,
+      },
+       {
+        title: 'MongoDB',
+        img: 'mongo',
+        per: 80,
+        delay: 0.625,
+      }
+      ]"
       style="
         width: 100vw;
         height: 100vh;
@@ -126,8 +193,8 @@
         max-height: 100vh;
         max-width: 100vw;
       "
-    ></app-project-nd>
-  </div> -->
+    ></app-project-st>
+  </div>
 </div>
 
 <!-- <a

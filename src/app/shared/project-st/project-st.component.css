@@ -208,7 +208,7 @@ p {
 }
 
 .imgs img {
-  max-width: 150px;
+  max-width: 125px;
   -webkit-user-drag: none;
   -khtml-user-drag: none;
   -moz-user-drag: none;
@@ -257,4 +257,86 @@ p {
 
 .bottom button:active {
   transform: scale(0.9);
+}
+
+@media screen and (max-width: 426px) {
+  .content {
+    gap: 0 !important;
+  }
+  .top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important;
+    justify-items: center !important;
+  }
+  .content .top h1 {
+    font-size: 2rem !important;
+    line-height: normal !important;
+  }
+
+  .content .top h2 {
+    font-size: 1rem !important;
+    line-height: normal !important;
+  }
+
+  .ex .text p {
+    font-size: 0.75rem !important;
+    line-height: normal !important;
+  }
+
+  .imgs2 {
+    gap: 0.5rem !important;
+  }
+
+  .imgs img {
+    max-width: 90px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+  .content {
+    gap: 0 !important;
+  }
+  .top {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    align-content: center !important;
+    justify-items: center !important;
+  }
+  .content .top h1 {
+    font-size: 3rem !important;
+    line-height: normal !important;
+  }
+
+  .content .top h2 {
+    font-size: 2rem !important;
+    line-height: normal !important;
+  }
+
+  .ex .text p {
+    font-size: 1rem !important;
+    line-height: normal !important;
+  }
+
+  .imgs2 {
+    gap: 0.75rem !important;
+  }
+
+  .imgs img {
+    max-width: 125px;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    display: block;
+  }
 }

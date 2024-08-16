@@ -3,28 +3,35 @@
     <h1>Despite the overwelming number of skills I had aquired</h1>
     <h2>This is my current stack that I use</h2>
     <div class="stack">
-      <img src="svgs/ng.svg" alt="" />
-      <img src="svgs/ts.svg" alt="" />
-      <img src="svgs/node.svg" alt="" />
-      <img src="svgs/exp.svg" alt="" />
-      <img src="svgs/mongo.svg" alt="" />
-      <img src="svgs/gcp.svg" alt="" />
+      <app-card
+        *ngFor="let item of stack1"
+        [title]="item.title"
+        [img]="item.img"
+        [per]="item.per"
+        [animate]="prop.animate"
+        [delay]="item.delay * 1.5"
+      ></app-card>
     </div>
   </div>
   <div class="future">
     <h1>Also, this is my stack for 2025</h1>
     <div class="stack">
-      <img src="svgs/next.svg" alt="" />
-      <img src="svgs/react.svg" alt="" />
-      <img src="svgs/ts.svg" alt="" />
-      <img src="svgs/node.svg" alt="" />
-      <img src="svgs/exp.svg" alt="" />
-      <img src="svgs/mongo.svg" alt="" />
-      <img src="svgs/gcp.svg" alt="" />
+      <app-card
+        *ngFor="let item of stack2"
+        [title]="item.title"
+        [img]="item.img"
+        [per]="item.per"
+        [animate]="prop.animate"
+        [delay]="item.delay * 1.75"
+      ></app-card>
     </div>
   </div>
   <div class="bottom">
-    <h6>Click on the each icon to know more</h6>
-    <button (click)="prop.setScroll(prop.height)">Show me your projects</button>
+    <app-navbtn
+      [color]="'#33322c'"
+      [bgColor]="'#fff8dc'"
+      [route]="prop.height"
+      [text]="'Projects?'"
+    ></app-navbtn>
   </div>
 </div>

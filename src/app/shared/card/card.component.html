@@ -1,0 +1,23 @@
+<div
+  class="card"
+  (mouseenter)="inc(5)"
+  (mouseleave)="percentage = 0"
+  [ngStyle]="{
+    opacity: animate ? '1' : '0',
+    transition: animate ? 'opacity 0.5s , transform 0.5s' : 'none',
+    transitionDelay: animate ? delay + 0.25 + 's' : '0s',
+    transform: animate ? 'scale(1)' : 'scale(1.5)'
+  }"
+>
+  <div class="tooltip" [style.zIndex]="100">
+    <p>{{ title }}</p>
+    <div class="progress">
+      <div
+        class="per"
+        [style.width]="percentage + '%'"
+        [style.backgroundColor]="setColor(per)"
+      ></div>
+    </div>
+  </div>
+  <img src="svgs/{{ img }}.svg" alt="" loading="lazy" />
+</div>

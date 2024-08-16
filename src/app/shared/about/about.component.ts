@@ -199,9 +199,9 @@ export class AboutComponent {
     this.sec3prop.animate = this.position > this.sec3prop.top * 0.6;
     this.sec4prop.animate = this.position > this.sec4prop.top * 0.8;
     this.sec5prop.animate = this.position > this.sec5prop.top * 0.8;
-    this.sec6prop.animate = this.position > this.sec6prop.top * 0.8;
-    this.sec7prop.animate = this.position > this.sec7prop.top * 0.8;
-    this.sec8prop.animate = this.position > this.sec8prop.top * 0.8;
+    this.sec6prop.animate = this.position > this.sec6prop.top * 0.85;
+    this.sec7prop.animate = this.position > this.sec7prop.top * 0.9;
+    this.sec8prop.animate = this.position > this.sec8prop.top * 0.9;
   }
 
   //^ Resize window;
