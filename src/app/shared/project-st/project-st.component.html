@@ -12,7 +12,10 @@
   [style.pointer-events]="hide ? 'auto' : 'none'"
   (click)="showOrHide(false, '')"
 ></div>
-<div class="content" style="overflow-y: hidden !important">
+<div
+  [className]="prop.animate ? 'content animate' : 'content'"
+  style="overflow-y: hidden !important"
+>
   <div class="top">
     <h1>{{ title }}</h1>
     <h2>{{ type }}</h2>
@@ -39,7 +42,7 @@
           [img]="item.img"
           [per]="item.per"
           [animate]="prop.animate"
-          [delay]="item.delay"
+          [delay]="item.delay + 1.5"
         ></app-card>
       </div>
     </div>

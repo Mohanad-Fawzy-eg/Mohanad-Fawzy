@@ -118,17 +118,10 @@
   justify-items: center;
 }
 
-.text h1 {
-  color: var(--background-color-shade8);
-  font-family: var(--font-cubano);
-  font-size: 5rem;
-  line-height: 100px;
-  margin: 0;
-  padding-bottom: 3%;
-}
-
-.text h1::after {
-  content: " full-stack developer";
+.text .showen,
+.text .typed {
+  opacity: 0;
+  display: block;
   color: var(--background-color-shade8);
   font-family: var(--font-cubano);
   font-size: 5rem;
@@ -136,8 +129,15 @@
   margin: 0;
 }
 
-.text .hidden {
-  display: none;
+.text .typed::after {
+  opacity: 0;
+  content: "|";
+  color: var(--background-color-shade8);
+  font-family: var(--font-cubano);
+  font-size: 5rem;
+  line-height: 100px;
+  margin: 0;
+  animation: typing 1s infinite;
 }
 
 .text span {
@@ -184,14 +184,14 @@
   animation: spawn 0.5s ease-in-out forwards;
 }
 
+.animate .text h2 {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 0.125s;
+}
+
 .animate .text span:first-of-type {
   animation: spawn 0.5s ease-in-out forwards;
   animation-delay: 0.25s;
-}
-
-.animate .text span:last-of-type {
-  animation: spawn 0.5s ease-in-out forwards;
-  animation-delay: 0.5s;
 }
 
 .animate .bottom {
@@ -200,22 +200,30 @@
 }
 
 @media (max-width: 426px) {
-  .text h1 {
+  .text .showen {
+    font-family: var(--font-cubano);
     font-size: 3rem;
     text-wrap: wrap;
-    line-height: 40px;
+    line-height: normal;
+    padding: 0 !important;
     animation: none;
   }
-  .text h1::after {
-    content: "";
-    display: none;
-  }
-  .text .hidden {
-    display: block;
-    font-size: 1.75rem !important;
+
+  .text .typed {
+    font-family: var(--font-cubano);
+    font-size: 1.75rem;
     text-wrap: nowrap;
-    padding-bottom: 5%;
+    line-height: normal;
+    animation: none;
   }
+
+  .text .typed::after {
+    content: "|";
+    font-size: 1.75rem;
+    line-height: normal;
+    animation: typing 1s infinite;
+  }
+
   .text span {
     font-size: 0.75rem;
     padding-right: 5%;
@@ -242,5 +250,19 @@
   100% {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

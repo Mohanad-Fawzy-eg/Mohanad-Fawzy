@@ -1,0 +1,49 @@
+<div [className]="prop.animate ? 'content animate' : 'content'">
+  <div class="text">
+    <h1>I am a tutor</h1>
+    <p>
+      I have worked as a math tutor for over 2 years, also I had worked as a
+      tutor for extra curricular activities funded by these organizations.
+    </p>
+  </div>
+  <div class="imgs">
+    <img
+      src="org/eg2030.png"
+      alt=""
+      [className]="animateIndex == 0 ? 'myimg animated-img' : 'myimg still-img'"
+      loading="lazy"
+    />
+    <img
+      src="org/med.png"
+      alt=""
+      [className]="animateIndex == 1 ? ' animated-img' : ' still-img'"
+      loading="lazy"
+    />
+    <img
+      src="org/pol.png"
+      alt=""
+      [className]="animateIndex == 2 ? ' animated-img' : ' still-img'"
+      loading="lazy"
+    />
+    <img
+      src="org/synd.png"
+      alt=""
+      [className]="animateIndex == 3 ? ' animated-img' : ' still-img'"
+      loading="lazy"
+    />
+    <img
+      src="org/train.png"
+      alt=""
+      [className]="animateIndex == 4 ? ' animated-img' : ' still-img'"
+      loading="lazy"
+    />
+  </div>
+  <div class="bottom">
+    <app-navbtn
+      [color]="'#33322c'"
+      [bgColor]="'#fff8dc'"
+      [route]="prop.height"
+      [text]="'Impressive!'"
+    ></app-navbtn>
+  </div>
+</div>

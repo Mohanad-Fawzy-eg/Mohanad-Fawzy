@@ -1,4 +1,4 @@
-<div class="content">
+<div [className]="prop.animate ? 'content animate' : 'content'">
   <div class="current">
     <h1>Despite the overwelming number of skills I had aquired</h1>
     <h2>This is my current stack that I use</h2>
@@ -9,7 +9,7 @@
         [img]="item.img"
         [per]="item.per"
         [animate]="prop.animate"
-        [delay]="item.delay * 1.5"
+        [delay]="item.delay + 0.5"
       ></app-card>
     </div>
   </div>
@@ -22,7 +22,7 @@
         [img]="item.img"
         [per]="item.per"
         [animate]="prop.animate"
-        [delay]="item.delay * 1.75"
+        [delay]="item.delay + 0.75"
       ></app-card>
     </div>
   </div>

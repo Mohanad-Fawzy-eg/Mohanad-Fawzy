@@ -129,6 +129,13 @@ img {
   margin: auto;
   justify-self: center;
   padding-bottom: 1%;
+  opacity: 0;
+  transform: translateY(1000%);
+}
+
+.animate .text h1 {
+  animation: spawn-rapidly 0.5s ease-in-out forwards;
+  animation-delay: 0.25;
 }
 
 /*? Skills */
@@ -166,10 +173,35 @@ img {
 .bottom {
   grid-area: 3 / 1 / 4 / 2;
   display: flex;
+  flex-direction: column;
   align-items: center;
   align-content: center;
   justify-items: center;
   justify-content: center;
+}
+
+.bottom .hover-or-click::after {
+  content: "Hover on Icons to show info";
+  font-family: var(--font-cubano);
+  font-size: 1rem;
+  color: var(--background-color-shade8);
+  opacity: 0;
+  transform: translateY(1000%);
+}
+
+.animate .bottom .hover-or-click::after {
+  animation: spawn-rapidly 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.bottom app-navbtn {
+  opacity: 0;
+  transform: translateY(1000%);
+}
+
+.animate .bottom app-navbtn {
+  animation: spawn-rapidly 1s ease-in-out forwards;
+  animation-delay: 3s;
 }
 
 /*? Media queries */
@@ -187,6 +219,12 @@ img {
   .container {
     width: 100vw !important;
     padding: 0 !important;
+  }
+  .bottom .hover-or-click::after {
+    content: "Click on Icons to show info";
+    font-family: var(--font-cubano);
+    font-size: 0.75rem;
+    color: var(--background-color-shade8);
   }
 }
 
@@ -206,5 +244,17 @@ img {
     width: 100vw !important;
     padding-left: 2% !important;
     padding-right: 2% !important;
+  }
+}
+
+@keyframes spawn-rapidly {
+  0% {
+    opacity: 0;
+    transform: translateY(1000%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

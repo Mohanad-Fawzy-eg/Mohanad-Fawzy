@@ -1,0 +1,32 @@
+<div [className]="prop.animate ? 'content animate' : 'content'">
+  <div class="text">
+    <h1>You can contact me at any time</h1>
+    <div class="links">
+      <a
+        href="https://www.linkedin.com/in/mohanad-fawzy-233367259/"
+        target="_blank"
+        ><i class="bx bxl-linkedin"></i
+      ></a>
+      <a href="mailto:mohanad.fawzy159@gmail.com" target="_blank"
+        ><i class="bx bxl-gmail"></i
+      ></a>
+      <a
+        href="https://api.whatsapp.com/send?phone=+201270666574&text=Hello%2C%20World!"
+        target="_blank"
+        ><i class="bx bxl-whatsapp"></i
+      ></a>
+    </div>
+  </div>
+  <div class="bottom">
+    <p>
+      This website was made with sweat and tears, your opinion matters to me.
+    </p>
+    <span>DO NOT CLICK HERE !</span>
+    <app-navbtn
+      [text]="'Rewind'"
+      [bgColor]="'#fff9e3'"
+      [color]="'#33322c'"
+      [route]="0"
+    ></app-navbtn>
+  </div>
+</div>

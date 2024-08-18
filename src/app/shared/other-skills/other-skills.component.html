@@ -1,4 +1,4 @@
-<div class="content">
+<div [className]="prop.animate ? 'content animate' : 'content'">
   <div class="text">
     <h1>These are some adittional technologies that I am familiar with</h1>
   </div>
@@ -11,11 +11,12 @@
         [type]="item.type"
         [per]="item.per"
         [animate]="prop.animate"
-        [delay]="item.delay"
+        [delay]="item.delay + 0.25"
       ></app-card>
     </div>
   </div>
   <div class="bottom">
+    <p class="hover-or-click"></p>
     <app-navbtn
       [bgColor]="'#fff9e3'"
       [color]="'#33322c'"

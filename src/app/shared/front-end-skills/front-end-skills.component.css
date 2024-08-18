@@ -146,7 +146,13 @@ img {
 .bottom {
   grid-area: 3 / 1 / 4 / 2;
   text-align: center;
-  transition: transform 0.2s ease-in-out;
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .bottom {
+  animation: spawn 0.25s ease-in-out forwards;
+  animation-delay: 0.75s;
 }
 
 .content .text {
@@ -163,6 +169,13 @@ img {
   font-size: 5rem;
   color: var(--background-color-shade8);
   text-align: center !important;
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .text h1 {
+  animation: spawn 0.25s ease-in-out forwards;
+  animation-delay: 0.25s;
 }
 
 .text span {
@@ -171,6 +184,13 @@ img {
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--background-color-shade7);
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .text span {
+  animation: spawn 0.25s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 .js {
@@ -380,8 +400,8 @@ img {
   }
 
   img {
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 30px;
+    max-height: 30px;
   }
 
   .skills {
@@ -490,7 +510,7 @@ img {
   }
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (min-width: 427px) and (max-width: 1025px) {
   img {
     max-width: 50px;
     max-height: 50px;
@@ -506,7 +526,7 @@ img {
   }
 
   .title {
-    margin-top: -3%;
+    margin-top: -2.5%;
   }
   .js .progress::before,
   .angular .progress::before,
@@ -522,5 +542,16 @@ img {
     position: absolute;
     border-radius: 100%;
     z-index: 15;
+  }
+}
+
+@keyframes spawn {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

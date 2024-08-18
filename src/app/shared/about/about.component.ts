@@ -12,8 +12,10 @@ import { BackEndSkillsComponent } from '../back-end-skills/back-end-skills.compo
 import { OtherSkillsComponent } from '../other-skills/other-skills.component';
 import { StackComponent } from '../stack/stack.component';
 import { ProjectStComponent } from '../project-st/project-st.component';
-import { ProjectNdComponent } from '../project-nd/project-nd.component';
 import { NavbtnComponent } from '../navbtn/navbtn.component';
+import { SupermanComponent } from '../superman/superman.component';
+import { RestComponent } from '../rest/rest.component';
+import { ContactComponent } from '../contact/contact.component';
 @Component({
   standalone: true,
   selector: 'app-about',
@@ -26,8 +28,10 @@ import { NavbtnComponent } from '../navbtn/navbtn.component';
     OtherSkillsComponent,
     StackComponent,
     ProjectStComponent,
-    ProjectNdComponent,
     NavbtnComponent,
+    SupermanComponent,
+    RestComponent,
+    ContactComponent,
   ],
 })
 export class AboutComponent {
@@ -46,6 +50,19 @@ export class AboutComponent {
     }
   }
 
+  myTitles: string[] = [
+    ' Full Stack Developer.',
+    ' Front End Developer.',
+    ' Back End Developer.',
+    ' Web Designer.',
+    ' Math Tutor.',
+    ' Content Writer.',
+  ];
+
+  myTitle: string = '';
+
+  called: boolean = false;
+
   //^ Router;
 
   async route(route: string) {
@@ -59,8 +76,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -69,8 +86,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -79,8 +96,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -89,8 +106,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -99,8 +116,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -109,8 +126,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -119,8 +136,8 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
 
@@ -129,10 +146,44 @@ export class AboutComponent {
     height: 0,
     opacity: 1,
     animate: false,
-    setScroll: function (position: number): void {
-      window.scrollTo({ top: position, behavior: 'smooth' });
+    setScroll: (position: number) => {
+      this.scrollme(position);
     },
   };
+
+  sec9prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: (position: number) => {
+      this.scrollme(position);
+    },
+  };
+
+  sec10prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: (position: number) => {
+      this.scrollme(position);
+    },
+  };
+
+  sec11prop: prop = {
+    top: 0,
+    height: 0,
+    opacity: 1,
+    animate: false,
+    setScroll: (position: number) => {
+      this.scrollme(position);
+    },
+  };
+
+  scrollme(position: number) {
+    window.scrollTo({ top: position, behavior: 'smooth' });
+  }
 
   async ngAfterViewInit(): Promise<void> {
     this.sec1prop.top = this.sec1?.nativeElement.offsetTop;
@@ -165,6 +216,18 @@ export class AboutComponent {
     this.sec8prop.height =
       this.sec8?.nativeElement.offsetHeight +
       this.sec8?.nativeElement.offsetTop;
+    this.sec9prop.top = this.sec9?.nativeElement.offsetTop;
+    this.sec9prop.height =
+      this.sec9?.nativeElement.offsetHeight +
+      this.sec9?.nativeElement.offsetTop;
+    this.sec10prop.top = this.sec10?.nativeElement.offsetTop;
+    this.sec10prop.height =
+      this.sec10?.nativeElement.offsetHeight +
+      this.sec10?.nativeElement.offsetTop;
+    this.sec11prop.top = this.sec11?.nativeElement.offsetTop;
+    this.sec11prop.height =
+      this.sec11?.nativeElement.offsetHeight +
+      this.sec11?.nativeElement.offsetTop;
     this.ch.detectChanges();
   }
 
@@ -180,6 +243,9 @@ export class AboutComponent {
   @ViewChild('sec6') sec6: ElementRef | undefined;
   @ViewChild('sec7') sec7: ElementRef | undefined;
   @ViewChild('sec8') sec8: ElementRef | undefined;
+  @ViewChild('sec9') sec9: ElementRef | undefined;
+  @ViewChild('sec10') sec10: ElementRef | undefined;
+  @ViewChild('sec11') sec11: ElementRef | undefined;
 
   animateFirst: boolean = false;
 
@@ -187,6 +253,11 @@ export class AboutComponent {
   @HostListener('window:scroll', ['$event'])
   async onScroll(event: any) {
     this.position = window.scrollY;
+
+    if (!this.called) {
+      setTimeout(this.typing.bind(this), 1000);
+      this.called = true;
+    }
 
     this.topArrowOpacity = this.position / this.sec1prop.height;
     if (this.sec1prop.opacity > 0 || this.position < this.sec2prop.top) {
@@ -196,12 +267,19 @@ export class AboutComponent {
     }
 
     this.sec2prop.animate = this.position > this.sec2prop.top * 0.6;
-    this.sec3prop.animate = this.position > this.sec3prop.top * 0.6;
-    this.sec4prop.animate = this.position > this.sec4prop.top * 0.8;
-    this.sec5prop.animate = this.position > this.sec5prop.top * 0.8;
-    this.sec6prop.animate = this.position > this.sec6prop.top * 0.85;
-    this.sec7prop.animate = this.position > this.sec7prop.top * 0.9;
-    this.sec8prop.animate = this.position > this.sec8prop.top * 0.9;
+    this.sec3prop.animate = this.position > this.sec3prop.top * 0.55;
+    this.sec4prop.animate = this.position > this.sec4prop.top * 0.7;
+    this.sec5prop.animate = this.position > this.sec5prop.top * 0.76;
+    this.sec6prop.animate = this.position > this.sec6prop.top * 0.81;
+    this.sec7prop.animate = this.position > this.sec7prop.top * 0.84;
+    this.sec8prop.animate = this.position > this.sec8prop.top * 0.86;
+    this.sec9prop.animate = this.position > this.sec9prop.top * 0.88;
+    this.sec10prop.animate = this.position > this.sec10prop.top * 0.9;
+    this.sec11prop.animate = this.position > this.sec11prop.top * 0.92;
+    if (this.sec2prop.animate && !this.called) {
+      setTimeout(this.typing.bind(this), 1500);
+      this.called = true;
+    }
   }
 
   //^ Resize window;
@@ -238,6 +316,18 @@ export class AboutComponent {
     this.sec8prop.height =
       this.sec8?.nativeElement.offsetHeight +
       this.sec8?.nativeElement.offsetTop;
+    this.sec9prop.top = this.sec9?.nativeElement.offsetTop;
+    this.sec9prop.height =
+      this.sec9?.nativeElement.offsetHeight +
+      this.sec9?.nativeElement.offsetTop;
+    this.sec10prop.top = this.sec10?.nativeElement.offsetTop;
+    this.sec10prop.height =
+      this.sec10?.nativeElement.offsetHeight +
+      this.sec10?.nativeElement.offsetTop;
+    this.sec11prop.top = this.sec11?.nativeElement.offsetTop;
+    this.sec11prop.height =
+      this.sec11?.nativeElement.offsetHeight +
+      this.sec11?.nativeElement.offsetTop;
   }
 
   //& Top arrow calc;
@@ -253,6 +343,29 @@ export class AboutComponent {
 
   calcOpacity(position: number, offsetTop: number): number {
     return offsetTop >= position ? position / offsetTop : offsetTop / position;
+  }
+
+  wordIndex: number = 0;
+  charIndex: number = 0;
+  isDeleting: boolean = false;
+
+  async typing() {
+    const currentWord = this.myTitles[this.wordIndex];
+    const currentChar = currentWord.substring(0, this.charIndex);
+    this.myTitle = currentChar;
+    if (!this.isDeleting && this.charIndex < currentWord.length) {
+      this.charIndex -= -1;
+      setTimeout(this.typing.bind(this), 50);
+    } else if (this.isDeleting && this.charIndex > 0) {
+      this.charIndex += -1;
+      setTimeout(this.typing.bind(this), 50);
+    } else {
+      this.isDeleting = !this.isDeleting;
+      this.wordIndex = !this.isDeleting
+        ? (this.wordIndex + 1) % this.myTitles.length
+        : this.wordIndex;
+      setTimeout(this.typing.bind(this), 1500);
+    }
   }
 }
 

@@ -1,12 +1,10 @@
-<div [className]="className" #content>
+<div [className]="prop.animate ? 'content animate' : 'content'" #content>
   <div class="text">
-    <h1>I am a</h1>
-    <h1 class="hidden">full stack developer</h1>
-
-    <span>I have 2 years of experience in web development</span>
+    <h1 class="showen">I am a</h1>
+    <h2 class="typed">{{ title }}</h2>
 
     <span
-      >Throughout my professional career I have aquired a lot of skills</span
+      >Throughout my professional career I have aquired a lot of skills.</span
     >
   </div>
   <div class="bottom">
@@ -14,7 +12,7 @@
       [color]="'#33322c'"
       [bgColor]="'#fffcf1'"
       [route]="prop.height"
-      [text]="'What skills?'"
+      [text]="'Surprise me!'"
     ></app-navbtn>
   </div>
 </div>

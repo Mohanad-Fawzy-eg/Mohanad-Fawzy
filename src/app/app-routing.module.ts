@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './shared/home/home.component';
 import { AboutComponent } from './shared/about/about.component';
-import { ProjectsComponent } from './shared/projects/projects.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'projects', component: ProjectsComponent },
+  { path: '', component: AboutComponent },
+  { path: 'home', component: AboutComponent },
+  { path: '**', component: AboutComponent },
 ];
 
 const routOptions: ExtraOptions = {

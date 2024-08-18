@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { prop } from '../about/about.component';
 import { NavbtnComponent } from '../navbtn/navbtn.component';
 
@@ -11,10 +11,6 @@ import { NavbtnComponent } from '../navbtn/navbtn.component';
 })
 export class FullStackComponent {
   @Input() prop!: prop;
+  @Input() title!: string;
   className: string = 'content';
-
-  @HostListener('window:scroll', ['$event'])
-  async onScroll(event: any) {
-    this.className = this.prop?.animate ? 'content animate' : 'content';
-  }
 }

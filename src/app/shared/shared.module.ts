@@ -16,6 +16,10 @@ import { ProjectStComponent } from './project-st/project-st.component';
 import { ProjectNdComponent } from './project-nd/project-nd.component';
 import { NavbtnComponent } from './navbtn/navbtn.component';
 import { CardComponent } from './card/card.component';
+import { StPageComponent } from './st-page/st-page.component';
+import { SupermanComponent } from './superman/superman.component';
+import { RestComponent } from './rest/rest.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   imports: [
@@ -47,7 +51,11 @@ import { CardComponent } from './card/card.component';
     ProjectStComponent,
     ProjectNdComponent,
     NavbtnComponent,
-    CardComponent
+    CardComponent,
+    StPageComponent,
+    SupermanComponent,
+    RestComponent,
+    ContactComponent
   ],
 })
 export class SharedModule {}

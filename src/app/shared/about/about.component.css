@@ -122,10 +122,10 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(11, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  height: 800%;
+  height: 1100%;
   overflow: hidden;
 }
 
@@ -288,9 +288,6 @@ app-navbtn {
   grid-area: 7 / 1 / 8 / 2;
   height: 100%;
   width: 100vw;
-  background-image: url("/waves\ \(7\).svg");
-  background-position: right;
-  background-size: 300%;
   background-color: var(--background-color-main);
 }
 
@@ -300,9 +297,33 @@ app-navbtn {
   grid-area: 8 / 1 / 9 / 2;
   height: 100%;
   width: 100vw;
-  background-image: url("/waves\ \(7\).svg");
-  background-position: right;
-  background-size: 300%;
+  background-color: var(--background-color-main);
+}
+
+#nineth {
+  overflow: hidden;
+  z-index: 10;
+  grid-area: 9 / 1 / 10 / 2;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--background-color-main);
+}
+
+#tenth {
+  overflow: hidden;
+  z-index: 10;
+  grid-area: 10 / 1 / 11 / 2;
+  height: 100%;
+  width: 100vw;
+  background-color: var(--background-color-main);
+}
+
+#eleventh {
+  overflow: hidden;
+  z-index: 10;
+  grid-area: 11 / 1 / 12 / 2;
+  height: 100%;
+  width: 100vw;
   background-color: var(--background-color-main);
 }
 
@@ -313,7 +334,7 @@ app-navbtn {
   }
   #first h1 {
     font-size: 1.75rem;
-    line-height: 10px;
+    line-height: normal;
   }
 
   #first span {

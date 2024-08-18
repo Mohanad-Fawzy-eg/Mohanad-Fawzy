@@ -19,9 +19,9 @@
     "
   >
     <div class="text">
-      <h1>Pleased to meet you</h1>
-      <span>I am from Alexanderia, Egypt</span>
-      <p>"I work hard so that my cat can have a better life."</p>
+      <h1>Welcome to my portfolio</h1>
+      <span>My name is Mohanad Fawzy</span>
+      <p>"I work hard so that my cat can have a better life"</p>
     </div>
     <div class="bottom">
       <p>Light mode worning!</p>
@@ -36,6 +36,7 @@
   <div class="content" id="second" #sec2>
     <app-full-stack
       [prop]="sec2prop"
+      [title]="myTitle"
       style="
         width: 100vw;
         height: 100vh;
@@ -194,6 +195,45 @@
         max-width: 100vw;
       "
     ></app-project-st>
+  </div>
+  <div class="content" id="nineth" #sec9>
+    <app-superman
+      [prop]="sec9prop"
+      style="
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        max-width: 100vw;
+      "
+    ></app-superman>
+  </div>
+  <div class="content" id="tenth" #sec10>
+    <app-rest
+      [prop]="sec10prop"
+      style="
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        max-width: 100vw;
+      "
+    ></app-rest>
+  </div>
+  <div class="content" id="eleventh" #sec11>
+    <app-contact
+      [prop]="sec11prop"
+      style="
+        width: 100vw;
+        height: 100vh;
+        min-width: 100vw;
+        min-height: 100vh;
+        max-height: 100vh;
+        max-width: 100vw;
+      "
+    ></app-contact>
   </div>
 </div>
 

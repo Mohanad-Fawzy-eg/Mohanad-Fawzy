@@ -131,6 +131,13 @@ img {
   font-family: var(--font-cubano);
   font-size: 5rem;
   color: var(--background-color-shade8);
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .text h1 {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 0.25s;
 }
 
 .text span {
@@ -138,12 +145,26 @@ img {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--background-color-shade7);
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .text span {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
 }
 
 .text p {
   font-family: var(--font-roboto);
   font-size: 1.5rem;
   color: var(--background-color-shade7);
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .text p {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 0.75s;
 }
 
 .skills {
@@ -280,6 +301,13 @@ img {
 .bottom {
   grid-area: 3 / 1 / 4 / 2;
   text-wrap: nowrap;
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .bottom {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
 /*? MEDIA QUERIES */
@@ -418,5 +446,16 @@ img {
     position: absolute;
     border-radius: 100%;
     z-index: 15;
+  }
+}
+
+@keyframes spawn {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

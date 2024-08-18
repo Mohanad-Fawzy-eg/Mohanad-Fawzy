@@ -93,261 +93,150 @@
   --huge: 5rem;
   --extra-huge: 6rem;
 }
-img {
-  max-width: 50px;
-  max-height: 50px;
-  -webkit-user-drag: none;
-  -khtml-user-drag: none;
-  -moz-user-drag: none;
-  -o-user-drag: none;
-  display: block;
-  cursor: pointer;
-}
+
 .content {
-  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  align-items: center;
   justify-content: center;
   align-content: center;
   justify-items: center;
+  align-items: center;
+  gap: 2rem;
   width: 100%;
   height: 100%;
   user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
 }
 
-h1,
-h2,
-h6 {
+h1 {
   font-family: var(--font-cubano);
-  text-align: center;
-  margin: 0;
-  padding: 0;
+  font-size: 3rem;
+  text-wrap: wrap;
+  line-height: normal;
+  color: var(--background-color-shade8);
   opacity: 0;
   transform: translateY(10%);
 }
 
-h1 {
-  font-size: 3rem;
-  color: var(--background-color-shade8);
-}
-
-h2 {
-  font-size: 2rem;
-  color: var(--background-color-shade7);
-}
-
-h6 {
-  font-size: 1.5rem;
-  color: var(--background-color-shade6);
-}
-
-.future h1 {
-  color: var(--background-color-shade7);
-}
-
-.animate .current h1 {
+.animate .text h1 {
   animation: spawn 0.5s ease-in-out forwards;
   animation-delay: 0.25s;
 }
 
-.animate .content h2 {
-  animation: spawn 0.5s ease-in-out forwards;
-  animation-delay: 0.5s;
-}
-
-.animate .future h1 {
-  animation: spawn 0.5s ease-in-out forwards;
-  animation-delay: 1.5s;
-}
-
-.stack {
-  position: relative;
+.links {
   display: flex;
   flex-direction: row;
-  gap: 3rem;
-  align-items: center;
   justify-content: center;
   align-content: center;
   justify-items: center;
-  justify-self: stretch;
-  align-self: stretch;
-  padding: 2%;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
 }
 
-.bottom {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  justify-self: stretch;
-  align-self: stretch;
-  padding: 2%;
+a {
+  font-size: 3rem;
+  color: var(--background-color-shade7);
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
   opacity: 0;
   transform: translateY(10%);
 }
 
-.animate .bottom {
+a:hover {
+  color: var(--background-color-shade8);
+  transform: translateY(-5%);
+}
+
+.animate .text .links a:nth-child(1) {
   animation: spawn 0.5s ease-in-out forwards;
-  animation-delay: 3s;
+  animation-delay: 0.5s;
+}
+.animate .text .links a:nth-child(2) {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 0.75s;
+}
+.animate .text .links a:nth-child(3) {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
-.bottom button {
-  text-wrap: nowrap;
-  text-decoration: none;
-  color: var(--background-color-shade1);
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.bottom p {
+  font-size: 1.75rem;
+  font-family: var(--font-montserrat);
+  font-weight: bold;
+  color: var(--background-color-shade7);
+  width: 75%;
+  line-height: normal;
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+.animate .bottom p {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 1.25s;
+}
+
+.bottom span {
+  font-size: 1.5rem;
   font-family: var(--font-cubano);
-  font-size: 1.4rem;
-  background-color: var(--secondary-color-main);
-  border-radius: 30px;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  border: 0;
-  transition: all 0.2s ease-in-out;
+  color: var(--background-color-shade7);
+  width: 75%;
+  line-height: normal;
+  opacity: 0;
+  transform: translateY(10%);
 }
 
-.bottom button:hover {
-  background-color: var(--secondary-color-shade5);
-  cursor: pointer;
+.animate .bottom span {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 1.5s;
 }
 
-.bottom button:active {
-  transform: scale(0.9);
+app-navbtn {
+  opacity: 0;
+  transform: translateY(10%);
 }
 
-/*^ Media queries */
-@media screen and (max-width: 321px) {
-  .content {
-    gap: 1rem !important;
+.animate app-navbtn {
+  animation: spawn 0.5s ease-in-out forwards;
+  animation-delay: 1.75s;
+}
+
+@media screen and (max-width: 426px) {
+  h1 {
+    font-size: 2rem;
+    text-align: center;
   }
-  .current,
-  .future,
-  .bottom {
-    width: 100vw !important;
-  }
-  .stack {
-    display: flex;
+  .links {
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  .current h1 {
-    font-size: 1.5rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-  .content h2 {
-    font-size: 1rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
+  a {
+    font-size: 2rem;
   }
 
-  .future h1 {
-    font-size: 1.25rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-}
-
-@media screen and (max-width: 400px) and (min-width: 322px) {
-  .content {
-    gap: 1.25rem !important;
-  }
-  .current,
-  .future,
-  .bottom {
-    width: 100vw !important;
-  }
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .current h1 {
-    font-size: 1.75rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-  .content h2 {
-    font-size: 1.25rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
+  .bottom p {
+    font-size: 1.25rem;
   }
 
-  .future h1 {
-    font-size: 1.5rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-}
-
-@media screen and (max-width: 426px) and (min-width: 401px) {
-  .content {
-    gap: 1.5rem !important;
-  }
-  .current,
-  .future,
-  .bottom {
-    width: 100vw !important;
-  }
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-  .current h1 {
-    font-size: 2rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-  .content h2 {
-    font-size: 1.25rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-
-  .future h1 {
-    font-size: 2rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-}
-
-@media screen and (min-width: 767px) and (max-width: 1025px) {
-  .content {
-    gap: 1.5rem !important;
-  }
-  .current,
-  .future,
-  .bottom {
-    width: 100vw !important;
-  }
-  .stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-  .current h1 {
-    font-size: 3rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-  .content h2 {
-    font-size: 2rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
-  }
-
-  .future h1 {
-    font-size: 3rem !important;
-    line-height: normal !important;
-    text-wrap: wrap !important;
+  .bottom span {
+    font-size: 1.25rem;
   }
 }
 

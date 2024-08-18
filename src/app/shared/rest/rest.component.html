@@ -1,0 +1,59 @@
+<div [className]="prop.animate ? 'content animate' : 'content'">
+  <div class="text">
+    <h1>I also Have some other usefull skills of some technologies</h1>
+  </div>
+  <div class="skills">
+    <div class="st">
+      <h3>Graphic Design</h3>
+      <div class="imgs">
+        <app-card
+          *ngFor="let item of set1"
+          [title]="item.title"
+          [img]="item.img"
+          [delay]="item.delay + 0.25"
+          [per]="item.per"
+          [title]="item.title"
+          [animate]="prop.animate"
+        ></app-card>
+      </div>
+    </div>
+
+    <div class="nd">
+      <h3>Video Editing</h3>
+      <div class="imgs">
+        <app-card
+          *ngFor="let item of set2"
+          [title]="item.title"
+          [img]="item.img"
+          [delay]="item.delay + 0.5"
+          [per]="item.per"
+          [title]="item.title"
+          [animate]="prop.animate"
+        ></app-card>
+      </div>
+    </div>
+
+    <div class="rd">
+      <h3>others</h3>
+      <div class="imgs">
+        <app-card
+          *ngFor="let item of set3"
+          [title]="item.title"
+          [img]="item.img"
+          [delay]="item.delay + 0.75"
+          [per]="item.per"
+          [title]="item.title"
+          [animate]="prop.animate"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+  <div class="bottom">
+    <app-navbtn
+      [bgColor]="'#fff9e3'"
+      [color]="'#33322c'"
+      [route]="prop.height"
+      [text]="'I want to contact you'"
+    ></app-navbtn>
+  </div>
+</div>
