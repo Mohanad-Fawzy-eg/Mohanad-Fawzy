@@ -76,40 +76,27 @@ export class OtherSkillsComponent {
       per: 76,
       delay: 0.875,
     },
-    {
-      title: 'EJS',
-      img: 'ejs',
-      type: 'Templating',
-      per: 100,
-      delay: 1,
-    },
-    {
-      title: 'Sass',
-      img: 'sass',
-      type: 'Preprocessing',
-      per: 30,
-      delay: 1.125,
-    },
+
     {
       title: 'Tailwind',
       img: 'tw',
       type: 'Style',
       per: 80,
-      delay: 1.25,
+      delay: 1,
     },
     {
       title: 'Bootstrap',
       img: 'boot',
       type: 'Style',
       per: 80,
-      delay: 1.375,
+      delay: 1.125,
     },
     {
       title: 'Flutter',
       img: 'flutter',
       type: 'Mobile',
       per: 51,
-      delay: 1.5,
+      delay: 1.25,
     },
 
     {
@@ -117,35 +104,21 @@ export class OtherSkillsComponent {
       img: 'next',
       type: 'Framework',
       per: 30,
-      delay: 1.625,
+      delay: 1.375,
     },
     {
       title: 'React',
       img: 'react',
       type: 'Frontend',
       per: 20,
-      delay: 1.75,
+      delay: 1.5,
     },
     {
       title: 'Vite.js',
       img: 'vite',
       type: 'Framework',
       per: 25,
-      delay: 1.875,
-    },
-    {
-      title: 'Vue.js',
-      img: 'vue',
-      type: 'Frontend',
-      per: 20,
-      delay: 2,
-    },
-    {
-      title: 'Webpack',
-      img: 'web',
-      type: 'Build Tools',
-      per: 51,
-      delay: 2.125,
+      delay: 1.625,
     },
 
     {
@@ -153,7 +126,7 @@ export class OtherSkillsComponent {
       img: 'firebase',
       type: 'Database',
       per: 30,
-      delay: 2.25,
+      delay: 1.75,
     },
 
     {
@@ -161,7 +134,7 @@ export class OtherSkillsComponent {
       img: 'postql',
       type: 'Database',
       per: 30,
-      delay: 2.375,
+      delay: 1.875,
     },
 
     {
@@ -169,7 +142,7 @@ export class OtherSkillsComponent {
       img: 'jl',
       type: 'Notebook',
       per: 80,
-      delay: 2.5,
+      delay: 2,
     },
 
     {
@@ -177,7 +150,7 @@ export class OtherSkillsComponent {
       img: 'tf',
       type: 'Machine Learning',
       per: 20,
-      delay: 2.625,
+      delay: 2.125,
     },
 
     {
@@ -185,14 +158,14 @@ export class OtherSkillsComponent {
       img: 'ue4',
       type: 'Game Engine',
       per: 65,
-      delay: 2.75,
+      delay: 2.25,
     },
     {
       title: 'Unity',
       img: 'unity',
       type: 'Game Engine',
       per: 51,
-      delay: 2.875,
+      delay: 2.375,
     },
   ];
 }

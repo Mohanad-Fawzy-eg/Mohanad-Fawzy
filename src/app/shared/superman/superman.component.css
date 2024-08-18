@@ -97,7 +97,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem;
   align-items: center;
   justify-content: start;
   width: 100%;
@@ -229,7 +229,10 @@
   }
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (min-width: 0px) and (max-width: 374px) {
+  .text {
+    padding-top: 50%;
+  }
   .text h1 {
     font-size: 2rem !important;
   }
@@ -267,7 +270,7 @@
   }
 }
 
-@media screen and (min-width: 500px) and (max-width: 769px) {
+@media screen and (min-width: 500px) and (max-width: 800px) {
   .text h1 {
     font-size: 3rem !important;
   }

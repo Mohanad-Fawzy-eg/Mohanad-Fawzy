@@ -110,6 +110,12 @@
   -moz-user-select: none;
   -o-user-select: none;
 }
+.text {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  user-select: none;
+}
 
 h1 {
   font-family: var(--font-cubano);

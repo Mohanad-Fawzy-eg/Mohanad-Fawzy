@@ -94,6 +94,28 @@
   --extra-huge: 6rem;
 }
 
+.black {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-shade8);
+  opacity: 0;
+  z-index: 15 !important;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+.img3 {
+  z-index: 19 !important;
+  position: fixed;
+  max-width: 250px;
+  margin-top: 17%;
+  margin-left: calc(50% - 125px);
+  pointer-events: none;
+  transition: opacity 0.5s;
+}
+
 .arrow-top {
   position: fixed;
   bottom: 2%;
@@ -335,6 +357,9 @@ app-navbtn {
   #first h1 {
     font-size: 1.75rem;
     line-height: normal;
+    text-align: center;
+    text-wrap: wrap;
+    width: 90%;
   }
 
   #first span {
@@ -347,6 +372,10 @@ app-navbtn {
   #first .bottom p {
     font-size: 0.75rem;
     text-align: center;
+  }
+
+  #first .bottom {
+    margin-top: -25%;
   }
 }
 

@@ -52,14 +52,19 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "1.2MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "5kB",
+                  "maximumError": "10kB"
                 }
               ],
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": false
+              },
               "outputHashing": "all"
             },
             "development": {

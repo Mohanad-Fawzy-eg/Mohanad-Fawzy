@@ -16,12 +16,14 @@ import { NavbtnComponent } from '../navbtn/navbtn.component';
 import { SupermanComponent } from '../superman/superman.component';
 import { RestComponent } from '../rest/rest.component';
 import { ContactComponent } from '../contact/contact.component';
+import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
   imports: [
+    CommonModule,
     FullStackComponent,
     FrontEndSkillsComponent,
     BackEndSkillsComponent,
@@ -247,7 +249,15 @@ export class AboutComponent {
   @ViewChild('sec10') sec10: ElementRef | undefined;
   @ViewChild('sec11') sec11: ElementRef | undefined;
 
-  animateFirst: boolean = false;
+  blackOut: boolean = false;
+  img: string = '';
+  hide($event: any) {
+    this.blackOut = $event;
+  }
+
+  showImg($event: string) {
+    this.img = $event;
+  }
 
   topArrowOpacity: number = 0;
   @HostListener('window:scroll', ['$event'])
@@ -276,6 +286,9 @@ export class AboutComponent {
     this.sec9prop.animate = this.position > this.sec9prop.top * 0.88;
     this.sec10prop.animate = this.position > this.sec10prop.top * 0.9;
     this.sec11prop.animate = this.position > this.sec11prop.top * 0.92;
+
+    this.blackOut = false;
+
     if (this.sec2prop.animate && !this.called) {
       setTimeout(this.typing.bind(this), 1500);
       this.called = true;

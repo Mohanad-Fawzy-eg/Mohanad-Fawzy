@@ -1,5 +1,17 @@
 <meta charset="UTF-8" />
-
+<img
+  class="img3"
+  [src]="!blackOut ? '' : 'Mockups/' + img + '.svg'"
+  alt=""
+  [ngStyle]="{ opacity: blackOut ? '1' : '0' }"
+  loading="lazy"
+/>
+<div
+  class="black"
+  [ngStyle]="{ opacity: blackOut ? '0.8' : '0' }"
+  [style.pointer-events]="blackOut ? 'auto' : 'none'"
+  (click)="blackOut = false"
+></div>
 <div class="main">
   <div
     class="content"
@@ -104,6 +116,8 @@
 
   <div class="content" id="seventh" #sec7>
     <app-project-st
+      (show)="hide($event)"
+      (showenImg)="showImg($event)"
       [title]="'Coursato'"
       [type]="'Mobile Application'"
       [desc]="
@@ -147,6 +161,8 @@
 
   <div class="content" id="eighth" #sec8>
     <app-project-st
+      (show)="hide($event)"
+      (showenImg)="showImg($event)"
       [title]="'Bee Org'"
       [type]="'CRUD Application'"
       [desc]="

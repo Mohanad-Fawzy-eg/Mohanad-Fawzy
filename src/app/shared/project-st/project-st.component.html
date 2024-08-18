@@ -1,17 +1,3 @@
-<img
-  class="img3"
-  [src]="!hide ? '' : 'Mockups/' + currentImg + '.svg'"
-  alt=""
-  [ngStyle]="{ opacity: hide ? '1' : '0' }"
-  loading="lazy"
-/>
-
-<div
-  class="black"
-  [ngStyle]="{ opacity: hide ? '0.8' : '0' }"
-  [style.pointer-events]="hide ? 'auto' : 'none'"
-  (click)="showOrHide(false, '')"
-></div>
 <div
   [className]="prop.animate ? 'content animate' : 'content'"
   style="overflow-y: hidden !important"
